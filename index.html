@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 特定のお客さま向けの資料なので検索避けする（URLを知っている人は見られる） -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>かみのてグループ ホームページ制作のご提案｜EasyWebCraft</title>
+<meta name="description" content="かみのてグループさま向けのホームページ制作のご提案です。保育園と放課後等デイサービスのサイト構成を2案でご比較いただけます。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="EasyWebCraft">
+<meta property="og:title" content="かみのてグループ ホームページ制作のご提案｜EasyWebCraft">
+<meta property="og:description" content="かみのてグループさま向けのホームページ制作のご提案です。保育園と放課後等デイサービスのサイト構成を2案でご比較いただけます。">
+<meta property="og:url" content="https://k-matsumoto527.github.io/kaminote-proposal/">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+  ul, ol { padding: 0; }
+  body { min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  img, picture, video, canvas, svg { display: block; max-width: 100%; }
+  input, button, textarea, select { font: inherit; }
+  p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+</style>
+</head>
+<body>
+<style>
+  /* ---------- トークン ---------- */
+  :root {
+    /* EasyWebCraft のLPと同じ配色（白地・濃紺・黄アクセント） */
+    --paper:      #ffffff;
+    --paper-card: #ffffff;
+    --paper-sunk: #f7fafd;
+    --ink:        #1a2433;
+    --ink-soft:   #35435a;
+    --ink-faint:  #5b6b7e;
+    --rule:       #dde6f0;
+    --indigo:     #0d3a7d;   /* LP --navy */
+    --indigo-bg:  #eef4fb;   /* LP --wash */
+    --amber:      #ffc61a;   /* LP --accent（面・点で使う） */
+    --amber-ink:  #7a5300;   /* 黄系を文字に使うとき（白地でのコントラスト確保） */
+    --amber-bg:   #fff8e1;
+    --mk:         #fff23c;   /* LP --mk（マーカー） */
+    --sky:        #3f8ecf;   /* 面・罫線用（LPそのまま） */
+    --sky-ink:    #2a6ca8;   /* 文字用に濃くしたもの（白地で5.5:1） */
+    --clay:       #d2564a;
+    --clay-bg:    #fdeeeb;
+    --sage:       #0d3a7d;
+    --sage-bg:    #eef4fb;
+    --shadow:     0 10px 30px rgba(13, 58, 125, .08);
+
+    --col: 37rem;
+    --rail: 5rem;
+
+    /* LPと同じくゴシック1本。Noto Sans JP は端末にあれば使われる
+       （Artifactは外部フォントを読み込めないためWebフォント指定はしない） */
+    --f-display: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                 Meiryo, "Yu Gothic UI", "Yu Gothic", sans-serif;
+    --f-body: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+              Meiryo, "Yu Gothic UI", "Yu Gothic", sans-serif;
+    --f-num: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0f1520; --paper-card: #161e2c; --paper-sunk: #121a26;
+      --ink: #eef3fa; --ink-soft: #c2cddd; --ink-faint: #93a2b6; --rule: #2a3547;
+      --indigo: #8fb6ee; --indigo-bg: #17233a;
+      --amber: #ffc61a; --amber-ink: #ffd75e; --amber-bg: #2b2415; --mk: #6b6410;
+      --sky: #6aa9de; --sky-ink: #85b8e6; --clay: #e8897d; --clay-bg: #2c1d1b;
+      --sage: #8fb6ee; --sage-bg: #17233a;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0f1520; --paper-card: #161e2c; --paper-sunk: #121a26;
+    --ink: #eef3fa; --ink-soft: #c2cddd; --ink-faint: #93a2b6; --rule: #2a3547;
+    --indigo: #8fb6ee; --indigo-bg: #17233a;
+    --amber: #ffc61a; --amber-ink: #ffd75e; --amber-bg: #2b2415; --mk: #6b6410;
+    --sky: #6aa9de; --sky-ink: #85b8e6; --clay: #e8897d; --clay-bg: #2c1d1b;
+    --sage: #8fb6ee; --sage-bg: #17233a;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+  :root[data-theme="light"] {
+    --paper: #ffffff; --paper-card: #ffffff; --paper-sunk: #f7fafd;
+    --ink: #1a2433; --ink-soft: #35435a; --ink-faint: #5b6b7e; --rule: #dde6f0;
+    --indigo: #0d3a7d; --indigo-bg: #eef4fb;
+    --amber: #ffc61a; --amber-ink: #7a5300; --amber-bg: #fff8e1; --mk: #fff23c;
+    --sky: #3f8ecf; --sky-ink: #2a6ca8; --clay: #d2564a; --clay-bg: #fdeeeb;
+    --sage: #0d3a7d; --sage-bg: #eef4fb;
+    --shadow: 0 10px 30px rgba(13, 58, 125, .08);
+  }
+
+  /* ---------- 土台 ---------- */
+  /* 60代の読み手を基準に、全体の基準サイズを18pxに引き上げる。
+     rem は html を基準にするため、ここで指定して各部品を連動させる。 */
+  html { font-size: 18px; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--f-body); font-size: 1rem; line-height: 1.95;
+    letter-spacing: .02em;
+    -webkit-font-smoothing: antialiased; text-size-adjust: 100%;
+  }
+  .doc { max-width: calc(var(--col) + var(--rail) + 3rem); margin: 0 auto; padding: 0 1.5rem 6rem; }
+  p, li { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 700; }
+  a { color: var(--indigo); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 2px; }
+  em { font-style: normal; background: linear-gradient(transparent 60%, var(--mk) 60%); }
+  .num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+
+  /* ---------- 表紙 ---------- */
+  .cover { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--rule); }
+  .cover-brand { font-family: var(--f-num); font-size: .92rem; letter-spacing: .22em; text-transform: uppercase; color: var(--indigo); margin-bottom: 2.75rem; }
+  .cover-to { font-size: 1.02rem; color: var(--ink-soft); margin-bottom: .35rem; }
+  .cover-to b { font-family: var(--f-display); font-size: 1.5rem; color: var(--ink); font-weight: 700; }
+  .cover h1 {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: clamp(1.85rem, 6vw, 2.9rem); line-height: 1.42;
+    letter-spacing: -.01em; text-wrap: balance; margin: 2.5rem 0 1.25rem;
+  }
+  .cover h1 .accent { color: var(--indigo); }
+  .cover-lead { font-size: 1.1rem; max-width: 34rem; }
+  .cover-meta { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 3rem; font-size: .92rem; color: var(--ink-faint); font-family: var(--f-num); }
+
+  /* ---------- 節 ---------- */
+  .sec { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 0 1.6rem; padding-top: 4.5rem; }
+  .sec-no { font-family: var(--f-num); font-size: .95rem; color: var(--ink-faint); padding-top: .6rem; border-top: 3px solid var(--indigo); align-self: start; letter-spacing: .06em; }
+  .sec-body { min-width: 0; padding-top: .5rem; }
+  .sec h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.45rem, 4.6vw, 1.9rem); line-height: 1.5; text-wrap: balance; margin-bottom: .9rem; letter-spacing: -.01em; }
+  .sec h3 { font-size: 1.14rem; font-weight: 700; color: var(--ink); margin: 2.1rem 0 .6rem; letter-spacing: .02em; }
+  .sec > .sec-body > p + p { margin-top: .9rem; }
+  .lede { font-size: 1.12rem; color: var(--ink); }
+
+  /* ---------- 部品 ---------- */
+  .chip { display: inline-block; font-family: var(--f-num); font-size: .82rem; letter-spacing: .08em; padding: .22em .7em; border-radius: 999px; background: var(--indigo-bg); color: var(--indigo); vertical-align: .1em; }
+  .chip.hi { background: var(--clay-bg); color: var(--clay); }
+  .chip.ok { background: var(--amber-bg); color: var(--amber-ink); }
+
+  .stack { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.4rem; }
+  .item { background: var(--paper-card); border: 1px solid var(--rule); border-left: 4px solid var(--indigo); padding: 1.3rem 1.45rem; border-radius: 6px; box-shadow: var(--shadow); }
+  .item-hi { border-left-color: var(--clay); }
+  .item-ok { border-left-color: var(--amber); }
+  .item h4 { font-size: 1.08rem; font-weight: 700; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: .55rem; margin-bottom: .4rem; }
+  .item p { font-size: 1rem; line-height: 1.9; }
+  .item p + p { margin-top: .5rem; }
+
+  ul.marks { list-style: none; margin-top: 1.1rem; display: flex; flex-direction: column; gap: .7rem; }
+  ul.marks li { position: relative; padding-left: 1.5rem; font-size: 1.03rem; }
+  ul.marks li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; height: .45rem; background: var(--amber); border-radius: 50%; }
+
+  .map { background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; padding: 1.1rem 1.25rem; margin-top: 1rem; overflow-x: auto; }
+  .map pre { font-family: var(--f-num); font-size: .95rem; line-height: 1.85; color: var(--ink-soft); white-space: pre; }
+  .map-cap { font-size: .9rem; color: var(--ink-faint); margin-bottom: .6rem; letter-spacing: .04em; }
+
+  .scroll { overflow-x: auto; margin-top: 1.25rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 1rem; min-width: 30rem; }
+  th, td { text-align: left; padding: .8rem .85rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th { font-size: .86rem; letter-spacing: .08em; color: var(--ink-faint); font-weight: 600; border-bottom-width: 2px; white-space: nowrap; }
+  td.n, th.n { text-align: right; font-family: var(--f-num); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: none; }
+  .t-note { font-size: .95rem; color: var(--ink-faint); margin-top: .6rem; }
+
+  .site { background: var(--paper-card); border: 1px solid var(--rule); border-top: 4px solid var(--indigo); padding: 1.35rem 1.4rem; margin-top: 1.25rem; border-radius: 6px; box-shadow: var(--shadow); }
+  .site-tag { font-family: var(--f-num); font-size: .84rem; letter-spacing: .12em; color: var(--indigo); }
+  .site h3 { font-family: var(--f-display); font-size: 1.4rem; font-weight: 700; margin: .25rem 0 .3rem; color: var(--ink); }
+  .site-goal { font-size: .98rem; color: var(--ink-faint); }
+
+  .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); }
+  .price { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: 2.7rem; color: var(--ink); line-height: 1.15; }
+  .price small { font-size: .92rem; color: var(--ink-faint); font-family: var(--f-body); }
+  .price-sub { font-size: .95rem; color: var(--ink-faint); margin-top: .25rem; }
+
+  .steps { display: flex; flex-direction: column; margin-top: 1.25rem; }
+  .step { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding: 1.05rem 0; border-top: 1px solid var(--rule); }
+  .step:last-child { border-bottom: 1px solid var(--rule); }
+  .step-when { font-family: var(--f-num); font-size: .92rem; color: var(--sky-ink); padding-top: .15rem; }
+  .step h4 { font-size: 1.06rem; font-weight: 700; color: var(--ink); }
+  .step p { font-size: 1rem; margin-top: .2rem; }
+
+  .callout { background: var(--indigo-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 1.4rem 1.5rem; margin-top: 1.5rem; }
+  .callout h4 { font-family: var(--f-display); font-size: 1.18rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
+  .callout p { font-size: 1.02rem; }
+  .callout p + p { margin-top: .6rem; }
+  .callout.warn { background: var(--amber-bg); }
+
+  /* ---------- 折りたたみ節（09以降・既定は閉じる） ---------- */
+  .fold { border-top: 1px solid var(--rule); }
+  .fold > summary {
+    list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: .8rem;
+    padding: .9rem 0; margin: 0;
+  }
+  .fold > summary::-webkit-details-marker { display: none; }
+  .fold > summary h2 { margin-bottom: 0; }
+  .fold > summary .fold-mark {
+    margin-left: auto; flex: none; font-family: var(--f-num); font-size: .9rem;
+    color: var(--indigo); border: 1px solid var(--indigo); border-radius: 999px;
+    padding: .15em .7em; white-space: nowrap; align-self: center;
+  }
+  .fold > summary:hover .fold-mark { background: var(--indigo-bg); }
+  .fold > summary:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
+  .fold[open] > summary .fold-mark::before { content: "閉じる －"; }
+  .fold:not([open]) > summary .fold-mark::before { content: "開く ＋"; }
+  .fold-body { padding-bottom: .5rem; }
+
+  /* ---------- 表紙（PCでは2段組・要約を右に） ---------- */
+  .cover-side {
+    background: var(--paper-card); border: 1px solid var(--rule); border-radius: 8px;
+    border-top: 4px solid var(--indigo); padding: 1.4rem 1.5rem; margin-top: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+  .cs-head {
+    font-family: var(--f-num); font-size: .8rem; letter-spacing: .16em;
+    color: var(--indigo); padding-bottom: .7rem; margin-bottom: .8rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .cs-list li { display: grid; grid-template-columns: 1.9rem 1fr; gap: .5rem; align-items: baseline; font-size: .98rem; color: var(--ink); font-weight: 700; }
+  .cs-list .n { font-family: var(--f-num); font-size: .82rem; color: var(--ink-faint); font-weight: 400; }
+  .cs-list .r { display: block; font-size: .86rem; color: var(--ink-faint); font-weight: 400; letter-spacing: 0; }
+  .cs-price { margin-top: 1.1rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
+  .cs-price b { font-family: var(--f-display); font-size: 1.45rem; color: var(--indigo); font-weight: 700; display: block; margin-bottom: .3rem; }
+  .cs-price span { font-size: .85rem; color: var(--ink-faint); display: block; }
+
+  @media (min-width: 64rem) {
+    .cover { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: 0 2.5rem; align-items: end; }
+    .cover-side { margin-top: 0; }
+  }
+
+  /* ---------- PC向けレイアウト（目次を左に固定） ---------- */
+  .toc { display: none; }
+  /* 料金2案は既定では縦積み。広い画面で横並びにする（下の 78rem 指定） */
+  .price-grid { display: flex; flex-direction: column; }
+
+  @media (min-width: 64rem) {
+    .doc {
+      display: grid; grid-template-columns: 14rem minmax(0, 1fr);
+      gap: 0 3rem; align-items: start; max-width: 86rem;
+    }
+    .toc {
+      display: block; position: sticky; top: 1.5rem;
+      padding-top: 5.6rem; max-height: calc(100vh - 3rem); overflow-y: auto;
+    }
+  }
+  .toc-head {
+    font-family: var(--f-num); font-size: .82rem; letter-spacing: .18em;
+    color: var(--indigo); text-transform: uppercase;
+    padding-bottom: .6rem; border-bottom: 2px solid var(--indigo); margin-bottom: .5rem;
+  }
+  .toc nav { display: flex; flex-direction: column; }
+  .toc nav a {
+    display: flex; gap: .6rem; align-items: baseline;
+    padding: .42rem .2rem .42rem .55rem; font-size: .92rem; line-height: 1.55;
+    color: var(--ink-soft); text-decoration: none;
+    border-left: 3px solid transparent;
+  }
+  .toc nav a:hover { color: var(--indigo); background: var(--indigo-bg); }
+  .toc nav a.on { color: var(--indigo); border-left-color: var(--indigo); font-weight: 700; }
+  .toc .t-no { font-family: var(--f-num); font-size: .78rem; color: var(--ink-faint); flex: none; }
+  .toc nav a.on .t-no { color: var(--indigo); }
+  .toc .t-ttl { min-width: 0; }
+  .toc-foot { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--rule); }
+
+  .sec { scroll-margin-top: 4.5rem; }
+
+  /* ---------- 広い画面（1250px〜）: 図・表・カードを2列に広げる ---------- */
+  @media (min-width: 78rem) {
+    /* 読み物は目が追える幅で止める。広げるのは図・表・カードだけ。 */
+    .sec-body > p, .sec-body > .lede,
+    .fold-body > p, .fold-body > .lede,
+    .callout > p, .callout > ul.marks,
+    .sec-body > ul.marks, .fold-body > ul.marks,
+    .t-note { max-width: 46rem; }
+
+    /* 項目カードを2列に */
+    .stack { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 1.1rem; }
+
+    /* 料金の2案を左右に並べて比較しやすく */
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: start; }
+    .price-grid .price-box { margin-top: 1.5rem; }
+
+    /* 表紙の要約パネルを少し大きく */
+    .cover { grid-template-columns: minmax(0, 1fr) 19rem; gap: 0 3rem; }
+  }
+
+  .end { margin-top: 4.5rem; padding-top: 2rem; border-top: 2px solid var(--indigo); font-size: .95rem; color: var(--ink-faint); }
+  .end b { font-family: var(--f-display); font-size: 1.25rem; color: var(--ink); display: block; margin-bottom: .35rem; font-weight: 700; }
+
+  .toolbar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: flex-end; padding: .85rem 0; background: var(--paper); }
+  .btn { font-family: var(--f-body); font-size: .95rem; color: var(--indigo); background: var(--paper-card); border: 1px solid var(--rule); padding: .6rem 1.1rem; cursor: pointer; border-radius: 999px; box-shadow: var(--shadow); }
+  .btn:hover { border-color: var(--indigo); color: var(--indigo); }
+
+  /* 構成イメージ（別資料）への導線 */
+  .xlink-box { margin-top: 2rem; padding: 1.4rem 1.5rem; background: var(--paper-sunk);
+               border: 1px solid var(--rule); border-radius: 8px; }
+  .xlink-box h4 { font-family: var(--f-display); font-size: 1.05rem; color: var(--indigo);
+                  margin: 0 0 .5rem; font-weight: 700; }
+  .xlink-box p { margin: 0 0 1rem; font-size: .95rem; color: var(--ink-soft); }
+  .xlink { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--f-body);
+           font-size: 1rem; font-weight: 700; color: #fff; background: var(--indigo);
+           text-decoration: none; padding: .75rem 1.5rem; border-radius: 999px;
+           box-shadow: var(--shadow); border: 1px solid var(--indigo); }
+  .xlink:hover { background: #0a2f66; color: #fff; }
+  .xlink::after { content: "\2197"; font-size: .9em; }
+  @media print {
+    .xlink { background: #fff; color: #000; box-shadow: none; }
+    .xlink::after { content: " " attr(href); font-size: .85em; word-break: break-all; }
+  }
+
+  @media (max-width: 30rem) {
+    html { font-size: 17px; }
+  }
+  @media (max-width: 34rem) {
+    .sec { grid-template-columns: 1fr; gap: .5rem; }
+    .sec-no { border-top: none; padding-top: 0; }
+    .step { grid-template-columns: 1fr; gap: .1rem; }
+  }
+
+  @media print {
+    :root { --paper: #fff; --paper-card: #fff; --paper-sunk: #f6f6f6;
+            --ink: #000; --ink-soft: #222; --ink-faint: #555; --rule: #bbb; }
+    html { font-size: 12pt; }
+    .toolbar, .toc { display: none; }
+    .doc { display: block; max-width: none; padding: 0; }
+    .stack, .price-grid { display: block; }
+    .cover { display: block; }
+    .cover-side { margin-top: 2rem; }
+    .sec, .item, .site, .price-box, .callout, .step, .map { break-inside: avoid; page-break-inside: avoid; }
+    .cover { padding-top: 1rem; }
+    a { text-decoration: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+<div class="doc">
+
+  <aside class="toc">
+    <div class="toc-head">目次</div>
+    <nav id="toc-nav">
+        <a href="#s00"><span class="t-no">00</span><span class="t-ttl">伺ったご要望</span></a>
+        <a href="#s01"><span class="t-no">01</span><span class="t-ttl">ご提案 ― 2つの構成プラン</span></a>
+        <a href="#s02"><span class="t-no">02</span><span class="t-ttl">会社案内と採用の入れ方</span></a>
+        <a href="#s03"><span class="t-no">03</span><span class="t-ttl">料金</span></a>
+        <a href="#s04"><span class="t-no">04</span><span class="t-ttl">取材と撮影</span></a>
+        <a href="#s05"><span class="t-no">05</span><span class="t-ttl">次のステップ</span></a>
+    </nav>
+  </aside>
+
+  <main>
+  <div class="toolbar">
+    <button type="button" class="btn" id="print-btn">印刷 / PDF保存</button>
+  </div>
+
+  <!-- ============ 表紙 ============ -->
+  <header class="cover">
+    <div class="cover-main">
+    <div class="cover-brand">EasyWebCraft</div>
+    <div class="cover-to">株式会社 A and K<br><b>かみのてグループ</b> 御中</div>
+
+    <h1>選ばれる園から、<br><span class="accent">選ばれる職場へ。</span></h1>
+
+    <p class="cover-lead">
+      保育・病児保育・療育と事業を広げてこられた御社に、いま必要なのは、
+      <strong>この先の拡大を支える「人」</strong>です。
+      法人としての信頼を伝える会社案内はもちろん、その先の発展につながるホームページを、
+      事業ごとに整理してご提案します。テンプレートを使わない、一からのオリジナル制作です。
+    </p>
+
+    <div class="cover-meta">
+      <span>2026年7月28日</span>
+      <span>ご提案：EasyWebCraft</span>
+    </div>
+    </div>
+
+    <aside class="cover-side">
+      <div class="cs-head">2つの構成プラン</div>
+      <ul class="cs-list">
+        <li><span class="n">A</span><span>3サイト案<span class="r">放課後等デイを事業所ごとに分ける</span></span></li>
+        <li><span class="n">B</span><span>2サイト案<span class="r">放課後等デイを1つにまとめる</span></span></li>
+      </ul>
+      <div class="cs-price">
+        <b>初期費用 0円</b>
+        <span>月額制。公開後の更新・保守も月額に含みます</span>
+        <span>テンプレートを使わないオリジナル制作</span>
+      </div>
+    </aside>
+  </header>
+
+  <!-- ============ 00 伺ったご要望 ============ -->
+  <section class="sec" id="s00">
+    <div class="sec-no">00</div>
+    <div class="sec-body">
+      <h2>伺ったご要望</h2>
+      <p class="lede">お打ち合わせで伺った4点です。このご提案は、すべてこの4点に沿って組み立てています。</p>
+
+      <ul class="marks">
+        <li><strong>今回、力を入れたいのは「採用」。</strong>可児市という地域性もあり、利用者の募集では困っていない。</li>
+        <li><strong>事業の広がりにあわせて、今後のために一度整理したい。</strong>1つのサイトに混在し、検索でも分かりやすさでも損をしている。</li>
+        <li><strong>利用者ではなく「働き手」に訴求したい。</strong>求人ページが欲しいのではなく、<em>調べた人が「ここで働いてみたい」と思う</em>要素を大事にしたい。</li>
+        <li><strong>オリジナルのホームページを持ちたい。</strong>既製のサービスやテンプレートではなく、かみのてのために作られたものにしたい。</li>
+      </ul>
+
+      <div class="callout">
+        <h4>この4点から導いた結論</h4>
+        <p>
+          <strong>ホームページを事業ごとに分けます。</strong>
+          2つの保育園は病児保育とあわせて1つの保育園サイトにまとめ、分かれるのは
+          <strong>放課後等デイを事業所ごとの2サイトにするか、1サイトにまとめるか</strong>の2通りです。
+        </p>
+        <p>
+          どちらも<strong>採用ページと代表メッセージで「働き手への訴求」に正面から応えます。</strong>
+          独立した採用サイトは作らず費用を抑えつつ、中身には手を抜きません。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 ご提案 ============ -->
+  <section class="sec" id="s01">
+    <div class="sec-no">01</div>
+    <div class="sec-body">
+      <h2>ご提案 ― 2つの構成プラン</h2>
+
+      <p class="lede">
+        働きたい人に届けるための材料は、すでに揃っています。多文化の職場、保育・病児保育・療育の一体運営、
+        看護師の常駐、数字で示せる待遇。<strong>足りないのは材料ではなく、それを届く形にすることだけです。</strong>
+      </p>
+      <p>
+        そのための構成が次の2案です。<strong>保育園（2園＋病児保育）を1サイトにまとめる</strong>のは共通で、
+        違うのは<strong>放課後等デイを事業所ごとに分けるかどうか</strong>だけです。
+      </p>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th></th><th>3サイト案</th><th>2サイト案</th></tr></thead>
+          <tbody>
+            <tr><td><strong>放課後等デイの扱い</strong></td><td>事業所ごとに分ける</td><td>1つにまとめる</td></tr>
+            <tr>
+              <td><strong>構成</strong></td>
+              <td>① 保育園（2園＋病児保育）<br>② かみのてKIDS<br>③ かみのてSMILE</td>
+              <td>① 保育園（2園＋病児保育）<br>② 放課後等デイ（KIDS・SMILE）</td>
+            </tr>
+            <tr><td><strong>月額（税別）</strong></td><td class="num">21,000円</td><td class="num">17,000円</td></tr>
+            <tr>
+              <td><strong>向いているケース</strong></td>
+              <td>事業所ごとの空き状況・お知らせを出したい／<strong>今後ここから派生する事業を手がける予定がある</strong></td>
+              <td>管理をシンプルにしたい／費用を抑えたい</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>① 保育園サイト（2案に共通）</h3>
+      <div class="map">
+        <div class="map-cap">かみのて保育園（病児保育を併設）・かみのて今渡保育園を1サイトに</div>
+<pre>トップ
+├─ 保育理念・大切にしていること
+├─ 園の紹介
+│   ├─ かみのて保育園（病児保育を併設）
+│   └─ かみのて今渡保育園
+├─ 園での一日・年間行事
+├─ 食事・食育／健康と安全（看護師との連携）
+├─ 病児保育のご案内
+├─ 多文化・国際的な環境
+├─ 入園案内（保育料・受け入れ・よくあるご質問）
+├─ 会社案内　　　　　　※グループ共通ページ（02節）
+├─ 採用・スタッフ紹介　※グループ共通ページ（02節）
+├─ お知らせ
+└─ 見学・お問い合わせ</pre>
+      </div>
+
+      <h3>② 放課後等デイ ― ここが2案の分かれ目</h3>
+      <div class="map">
+        <div class="map-cap">ページの中身は共通。3サイト案では、この構成を事業所ごとに1つずつ作ります</div>
+<pre>トップ
+├─ 支援方針・大切にしていること
+├─ こんなお子さま・ご家庭へ
+├─ 支援の内容（5領域・個別・集団・家族支援・多言語）
+├─ 施設紹介
+│   【2サイト案】KIDS ／ SMILE を1サイトの中で分ける
+│   【3サイト案】各サイトで「事業所のご案内」として詳しく
+├─ 一日の流れ（平日／学校休業日）
+├─ ご利用案内（対象・受給者証・利用料金・利用の流れ）
+├─ 会社案内・採用　※グループ共通ページ（02節）
+├─ お知らせ・活動の記録
+└─ 見学・利用のご相談</pre>
+      </div>
+
+      <div class="callout">
+        <h4>2案の選び方</h4>
+        <p>
+          KIDSとSMILEは支援方針とプログラムを共有しています。<strong>1つにまとめても、施設ページを分ければ場所や時間の違いは伝わります。</strong>
+        </p>
+        <p>
+          <strong>事業所ごとに窓口を独立させたい</strong>、あるいは<strong>空き状況やお知らせを事業所単位で出したい</strong>場合は3サイト案です。
+          ただし支援内容が共通のため、<strong>場所・定員・利用時間・送迎範囲・スタッフ・活動の記録</strong>を前に出して作り分けます（取材・撮影も事業所ごとに伺います）。
+          <em>2サイト案で始めて、あとから独立させることもできます。</em>
+        </p>
+      </div>
+
+      <div class="callout">
+        <h4>どちらの案でも共通すること</h4>
+        <ul class="marks">
+          <li><strong>テンプレートを使わない、一からのオリジナル制作</strong>（全サイト）</li>
+          <li>各サイトに<strong>「会社案内」と「採用・スタッフ紹介」ページ</strong>を組み込みます（02節）</li>
+          <li><strong>取材・撮影</strong>込み。代表・職員の方のお話を、こちらで文章にします（04節）</li>
+          <li><strong>スマートフォンを基準</strong>に設計。将来の多言語化にも耐える構造で作ります</li>
+          <li>初期費用0円・月額制。公開後の更新・保守も月額に含みます</li>
+        </ul>
+      </div>
+
+      <!-- ▼ 構成イメージのURL（共有リンク発行後に差し替える） -->
+      <div class="xlink-box">
+        <h4>ページの並びは、別紙「構成イメージ」でご覧いただけます</h4>
+        <p>
+          どのサイトに何のページが入るのか。採用ページやトップページに何が並ぶのか。
+          文章ではなく<strong>画面の形</strong>でまとめたものをご用意しました。デザインではなく、あくまで配置の図です。
+        </p>
+        <a class="xlink" href="structure.html" target="_blank" rel="noopener">構成イメージを見る</a>
+      </div>
+
+      <p class="t-note">
+        ※ 施設の所在地は、かみのて保育園（今渡3-5・病児保育を併設）、かみのて今渡保育園（今渡3-11）を確認しています。
+        放課後等デイ2事業所の所在地・定員・利用時間、および「Hands of God」の位置づけは、あらためてお聞かせください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 02 会社案内と採用 ============ -->
+  <section class="sec" id="s02">
+    <div class="sec-no">02</div>
+    <div class="sec-body">
+      <h2>会社案内と採用の入れ方</h2>
+      <p>
+        独立したコーポレートサイト・採用サイトは作りません。そのぶん<strong>法人の信用</strong>と<strong>働き手への訴求</strong>を、
+        各サイトの中のページとして組み込みます。
+      </p>
+
+      <div class="stack">
+        <div class="item">
+          <h4>会社案内ページ <span class="chip">法人の顔</span></h4>
+          <p>
+            法人概要・代表メッセージ・理念・沿革と、<strong>外国人材事業</strong>のご紹介。
+            行政や提携先が見ても信用できる、法人としての顔になります。
+          </p>
+        </div>
+        <div class="item item-hi">
+          <h4>採用・スタッフ紹介ページ <span class="chip hi">いちばん力を入れる</span></h4>
+          <p>
+            働く環境・スタッフの声・多文化の職場・「数字で見る職場」・募集要項。
+            <strong>ご要望に正面から応えるページ</strong>で、取材で集めた言葉と写真をここに注ぎます。
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top:1.4rem">
+        どちらも<strong>内容はグループ共通</strong>です。一度作れば全サイトから同じページを見せられ、
+        <strong>サイト数が増えても手間や費用は増えません。</strong>
+        将来この採用ページを、独立した採用サイトへ育てることもできます。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 03 料金 ============ -->
+  <section class="sec" id="s03">
+    <div class="sec-no">03</div>
+    <div class="sec-body">
+      <h2>料金</h2>
+      <p><strong>初期費用0円の月額制</strong>です。公開後の更新・保守も月額に含まれます。</p>
+
+      <div class="price-grid">
+      <div class="price-box">
+        <div class="site-tag">3サイト案 ／ 放課後等デイを事業所ごとに分ける</div>
+        <div class="price">21,000<small> 円／月（税別）</small></div>
+        <div class="price-sub num">税込 23,100円／月　｜　初期費用 0円</div>
+        <ul class="marks" style="margin-top:1.2rem">
+          <li>保育園（2園＋病児保育）・かみのてKIDS・かみのてSMILEの<strong>3サイト</strong></li>
+          <li>テンプレートを使わない<strong>オリジナルデザイン</strong>（全サイト）</li>
+          <li>各サイトに<strong>会社案内・採用ページ</strong>を組み込み</li>
+          <li>取材・撮影・原稿作成（代表メッセージ2本を含む）。<strong>放課後等デイは事業所ごとに伺います</strong></li>
+          <li>スマートフォン対応・基本のSEO設定・プライバシーポリシー整備</li>
+          <li>公開後の更新・修正対応（<strong>回数の追加費用なし</strong>）</li>
+        </ul>
+      </div>
+
+      <div class="price-box">
+        <div class="site-tag">2サイト案 ／ 放課後等デイを1つにまとめる</div>
+        <div class="price">17,000<small> 円／月（税別）</small></div>
+        <div class="price-sub num">税込 18,700円／月　｜　初期費用 0円</div>
+        <ul class="marks" style="margin-top:1.2rem">
+          <li>保育園（2園＋病児保育）・放課後等デイ（KIDS・SMILE）の<strong>2サイト</strong></li>
+          <li>オリジナルデザイン・取材・撮影・原稿作成は<strong>3サイト案と同じ内容</strong></li>
+          <li>各サイトに<strong>会社案内・採用ページ</strong>を組み込み</li>
+          <li>KIDSとSMILEを1サイトにまとめるぶん、費用と管理をシンプルに</li>
+        </ul>
+      </div>
+      </div>
+
+      <p class="t-note">
+        ※ 通常は1サイトあたり月額9,800円（EasyWebHP＋）のところ、複数サイト同時のご契約として設定しています。<br>
+        ※ 最低契約期間は12ヶ月とさせてください。取材・撮影を含む制作となるため、通常より長く設定しています。<br>
+        ※ 独自ドメインをご希望の場合、ドメイン費用（1本あたり年間1,000〜2,000円程度）のみ実費でご負担いただきます。
+      </p>
+
+      <div class="callout">
+        <h4>正直に申し上げます</h4>
+        <p>
+          同じ内容を制作会社にご依頼された場合、一般には<strong>100万円を超える規模</strong>になります。
+        </p>
+        <p>
+          この金額でお受けするのは<strong>保育・福祉分野で最初の案件だからです。</strong>
+          利益ではなく実績として残させていただくことが目的で、そのぶん手を抜くつもりはありません。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 取材と撮影 ============ -->
+  <section class="sec" id="s04">
+    <div class="sec-no">04</div>
+    <div class="sec-body">
+      <details class="fold">
+        <summary><h2>取材と撮影</h2><span class="fold-mark"></span></summary>
+        <div class="fold-body">
+      <p class="lede">
+        いちばん大事な作業は、デザインでもプログラムでもなく<strong>取材</strong>です。
+        「働きたい」と思わせるのは、きれいなレイアウトではなく<strong>実際に働いている方の言葉</strong>です。
+      </p>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th>相手</th><th>伺いたいこと</th><th>目安</th></tr></thead>
+          <tbody>
+            <tr><td>代表の方</td><td>創業の経緯、複数の事業を一体でやる理由、これから目指すもの</td><td class="num">90〜120分</td></tr>
+            <tr><td>職員の方 3〜5名</td><td>入職の理由、仕事のやりがい、大変なこと、休日の過ごし方</td><td class="num">各30〜45分</td></tr>
+            <tr><td>園長・管理者の方</td><td>どんな方に来てほしいか、育て方の考え</td><td class="num">45分</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="marks">
+        <li><strong>代表メッセージは2本になります。</strong>会社案内には「法人として何を約束するか」、採用には「どんな仲間と働きたいか」を。<strong>取材は1回で結構です</strong> ― 伺ったお話から、こちらで2本に書き分けます。</li>
+        <li><strong>文章はこちらで書き起こします。</strong>ご確認いただいてから掲載しますので、原稿づくりのご負担はかけません。</li>
+        <li><strong>撮影は私が伺います。</strong>お手持ちの写真があれば、あわせて活用します。</li>
+      </ul>
+
+      <div class="callout warn">
+        <h4>写真について、先にご相談させてください</h4>
+        <p>
+          園児が写る場合は<strong>保護者の方の同意が必要</strong>です。難しい場合は後ろ姿・手元・空間で構成します。
+          <strong>会社案内と採用は主役が代表・職員の方なので、この制約はほぼかかりません。</strong>
+        </p>
+      </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 05 次のステップ ============ -->
+  <section class="sec" id="s05">
+    <div class="sec-no">05</div>
+    <div class="sec-body">
+      <h2>次のステップ</h2>
+      <p class="lede">
+        <strong>3サイト案・2サイト案のどちらで進めるかをお聞かせください。</strong>この場で組み替えられます。
+      </p>
+      <p>
+        公開までは<strong>3サイト案で約4ヶ月、2サイト案で約3ヶ月</strong>を見込んでいます。
+        園さまのご負担は、取材にご協力いただく時間が中心です。詳しい進め方は口頭でご説明します。
+      </p>
+
+      <h3>ご準備・ご確認いただきたいこと</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>内容</th><th>備考</th><th style="white-space:nowrap">必要度</th></tr></thead>
+          <tbody>
+            <tr><td>3サイト案・2サイト案のどちらで進めるか</td><td>ご予算とご希望に合わせてお選びください</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>取材のお時間</td><td>代表の方・職員3〜5名・園長の方。日程は分けて調整します</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>撮影のご許可</td><td>職員の方の顔出し可否を、事前にご確認ください</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>会社の沿革</td><td>創業からの出来事。メモ書き程度で構いません</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>放課後等デイ2事業所の詳細</td><td>所在地・定員・利用時間・送迎の範囲</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>ドメインの方針／今のHPの扱い</td><td>別ドメインかサブドメインか。公開後に閉じるか残すか</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>「Hands of God」の位置づけ</td><td>どの事業として扱うか教えてください</td><td><span class="chip hi">必須</span></td></tr>
+            <tr><td>職員数・平均年齢・勤続年数など</td><td>「数字で見る職場」で使用します</td><td><span class="chip">推奨</span></td></tr>
+            <tr><td>ロゴのデータ</td><td>お持ちでなければ現在お使いのものを使用します</td><td><span class="chip">任意</span></td></tr>
+            <tr><td>制作事例としての掲載</td><td>完成後、当方の実績として紹介させていただけますでしょうか</td><td><span class="chip">お願い</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="end">
+        <b>EasyWebCraft</b>
+        初期費用0円・月額制のホームページ制作／運用サービス<br>
+        <a href="https://k-matsumoto527.github.io/easyweb-lp/" target="_blank" rel="noopener">サービス紹介ページ</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<script>
+  document.getElementById('print-btn').addEventListener('click', function () {
+    window.print();
+  });
+
+  var folds = document.querySelectorAll('details.fold');
+
+  // --- 目次: 押した節が閉じていれば開いてから移動する ---
+  var links = document.querySelectorAll('#toc-nav a');
+  links.forEach(function (a) {
+    a.addEventListener('click', function () {
+      var sec = document.querySelector(a.getAttribute('href'));
+      if (!sec) { return; }
+      var d = sec.querySelector('details.fold');
+      if (d) { d.open = true; }
+    });
+  });
+
+  // --- 目次: いま読んでいる節を強調する ---
+  var secs = document.querySelectorAll('section.sec');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) { return; }
+        links.forEach(function (a) {
+          a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    secs.forEach(function (sec) { io.observe(sec); });
+  }
+
+  // --- すべて開く / すべて閉じる ---
+  var allBtn = document.getElementById('toggle-all');
+  if (allBtn) {
+    allBtn.addEventListener('click', function () {
+      var openAll = allBtn.dataset.state !== 'open';
+      folds.forEach(function (d) { d.open = openAll; });
+      allBtn.dataset.state = openAll ? 'open' : 'closed';
+      allBtn.textContent = openAll ? 'すべて閉じる' : 'すべて開く';
+    });
+  }
+
+  // 印刷・PDF保存のときは、閉じている節も開いた状態で出力する
+  window.addEventListener('beforeprint', function () {
+    folds.forEach(function (d) {
+      d.dataset.wasOpen = d.open ? '1' : '0';
+      d.open = true;
+    });
+  });
+  window.addEventListener('afterprint', function () {
+    folds.forEach(function (d) {
+      if (d.dataset.wasOpen === '0') { d.open = false; }
+    });
+  });
+</script>
+</body>
+</html>
