@@ -35,21 +35,34 @@ RESET = """\
 PAGES = {
     "index.html": {
         "src": "proposal-kaminote.html",
-        "desc": "かみのてグループさま向けのホームページ制作のご提案です。"
-                "保育園と放課後等デイサービスのサイト構成を2案でご比較いただけます。",
-        "links": {
-            "https://claude.ai/code/artifact/361b12e8-b114-4e9a-8d44-83b0a5fe9665": "structure.html",
-        },
-    },
-    "structure.html": {
-        "src": "kaminote-wireframe.html",
-        "desc": "かみのてグループさまのホームページ構成イメージです。"
-                "どのサイトに何のページが入るのかを画面の形でまとめています。",
-        "links": {
-            "https://claude.ai/code/artifact/c96d6593-c650-4900-b5cd-76dab0714427": "index.html",
-        },
+        "desc": "かみのてグループさま向けのサイト構成のご提案です。"
+                "放課後等デイを事業所ごとに分ける3サイト案と、1つにまとめる2サイト案を"
+                "画面の並び（間取り図）つきでご比較いただけます。",
+        "links": {},
     },
 }
+
+# 構成イメージは提案書に統合したので、単独ページは無くなった。
+# 統合前に structure.html のURLを開いた人が404にならないよう、転送だけ残す。
+REDIRECTS = {
+    "structure.html": ("index.html#s02", "画面の並び ― 間取り図"),
+}
+
+REDIRECT_TEMPLATE = """<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta http-equiv="refresh" content="0; url={to}">
+<link rel="canonical" href="{to}">
+<title>{label}｜EasyWebCraft</title>
+</head>
+<body style="font:16px/1.8 system-ui,sans-serif;padding:2rem">
+<p>この内容はご提案書に統合しました。<a href="{to}">{label}へ移動します</a>。</p>
+</body>
+</html>
+"""
 
 TEMPLATE = """<!DOCTYPE html>
 <html lang="ja">
@@ -104,3 +117,9 @@ def build(out_name, spec):
 if __name__ == "__main__":
     for name, spec in PAGES.items():
         build(name, spec)
+    for name, (to, label) in REDIRECTS.items():
+        (DST / name).write_text(
+            REDIRECT_TEMPLATE.format(to=to, label=html.escape(label, quote=True)),
+            encoding="utf-8",
+        )
+        print(f"{name:16s} -> {to}  (転送)")

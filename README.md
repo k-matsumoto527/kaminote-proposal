@@ -2,17 +2,19 @@
 
 株式会社 A and K／かみのてグループさま向けの、ホームページ制作のご提案ページ。
 
-- ご提案 <https://k-matsumoto527.github.io/kaminote-proposal/>
-- 構成イメージ <https://k-matsumoto527.github.io/kaminote-proposal/structure.html>
+- <https://k-matsumoto527.github.io/kaminote-proposal/>
+
+資料の目的は**サイト構成（家づくりでいう間取り図）を2案から選んでもらうこと**。
+デザインの合意でも受注のための提案でもないので、売り込みの要素は置かない。
 
 ## 中身の直し方
 
-`index.html` と `structure.html` は**生成物なので直接編集しない**。原本は `~/ewc-docs/` にある。
+`index.html` は**生成物なので直接編集しない**。原本は `~/ewc-docs/proposal-kaminote.html`。
 
-| 公開ファイル | 原本 |
-| --- | --- |
-| `index.html` | `~/ewc-docs/proposal-kaminote.html` |
-| `structure.html` | `~/ewc-docs/kaminote-wireframe.html` |
+もとは提案書と構成イメージの2ページだったが、行き来が発生して読みにくいため1ページに統合した。
+`~/ewc-docs/kaminote-wireframe.html` は統合前の構成イメージで、**もう公開には使っていない**
+（Artifact 版が残っているだけ）。`structure.html` は統合前のURLを開いた人のための転送ページで、
+`build.py` が生成する。
 
 原本は Claude の Artifact 用のHTML断片で、`<!doctype>` や `<head>` を持たない（publish 時に自動で付くため）。
 GitHub Pages は素のファイルをそのまま配信するので、`build.py` がその外側とリセットCSSを被せ、
