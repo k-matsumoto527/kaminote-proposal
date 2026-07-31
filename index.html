@@ -154,6 +154,15 @@
   tbody tr:last-child td { border-bottom: none; }
   .t-note { font-size: .95rem; color: var(--ink-faint); margin-top: .6rem; }
 
+  /* 2案の比較表。列幅を自動にすると中身の量で幅が決まってしまい、
+     3サイト案が2サイト案の倍近い幅になって左右が不揃いに見える。
+     項目名の列を固定し、2案の列を必ず同じ幅にする。 */
+  .cmp { table-layout: fixed; }
+  .cmp th:first-child, .cmp td:first-child { width: 11.5rem; }
+  .cmp th + th, .cmp td + td { width: calc((100% - 11.5rem) / 2); }
+  .cmp th + th { border-left: 1px solid var(--rule); }
+  .cmp td + td { border-left: 1px solid var(--rule); }
+
   .site-tag { font-family: var(--f-num); font-size: .84rem; letter-spacing: .12em; color: var(--indigo); }
 
   .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); }
@@ -398,7 +407,7 @@
       </p>
 
       <div class="scroll">
-        <table>
+        <table class="cmp">
           <thead><tr><th></th><th>3サイト案</th><th>2サイト案</th></tr></thead>
           <tbody>
             <tr><td><strong>放課後等デイの扱い</strong></td><td>事業所ごとに分ける</td><td>1つにまとめる</td></tr>
