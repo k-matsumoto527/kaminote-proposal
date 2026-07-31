@@ -138,18 +138,6 @@
   .lede { font-size: 1.12rem; color: var(--ink); }
 
   /* ---------- 部品 ---------- */
-  .chip { display: inline-block; font-family: var(--f-num); font-size: .82rem; letter-spacing: .08em; padding: .22em .7em; border-radius: 999px; background: var(--indigo-bg); color: var(--indigo); vertical-align: .1em; }
-  .chip.hi { background: var(--clay-bg); color: var(--clay); }
-  .chip.ok { background: var(--amber-bg); color: var(--amber-ink); }
-
-  .stack { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.4rem; }
-  .item { background: var(--paper-card); border: 1px solid var(--rule); border-left: 4px solid var(--indigo); padding: 1.3rem 1.45rem; border-radius: 6px; box-shadow: var(--shadow); }
-  .item-hi { border-left-color: var(--clay); }
-  .item-ok { border-left-color: var(--amber); }
-  .item h4 { font-size: 1.08rem; font-weight: 700; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: .55rem; margin-bottom: .4rem; }
-  .item p { font-size: 1rem; line-height: 1.9; }
-  .item p + p { margin-top: .5rem; }
-
   ul.marks { list-style: none; margin-top: 1.1rem; display: flex; flex-direction: column; gap: .7rem; }
   ul.marks li { position: relative; padding-left: 1.5rem; font-size: 1.03rem; }
   ul.marks li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; height: .45rem; background: var(--amber); border-radius: 50%; }
@@ -166,22 +154,12 @@
   tbody tr:last-child td { border-bottom: none; }
   .t-note { font-size: .95rem; color: var(--ink-faint); margin-top: .6rem; }
 
-  .site { background: var(--paper-card); border: 1px solid var(--rule); border-top: 4px solid var(--indigo); padding: 1.35rem 1.4rem; margin-top: 1.25rem; border-radius: 6px; box-shadow: var(--shadow); }
   .site-tag { font-family: var(--f-num); font-size: .84rem; letter-spacing: .12em; color: var(--indigo); }
-  .site h3 { font-family: var(--f-display); font-size: 1.4rem; font-weight: 700; margin: .25rem 0 .3rem; color: var(--ink); }
-  .site-goal { font-size: .98rem; color: var(--ink-faint); }
 
   .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); }
   .price { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: 2.7rem; color: var(--ink); line-height: 1.15; }
   .price small { font-size: .92rem; color: var(--ink-faint); font-family: var(--f-body); }
   .price-sub { font-size: .95rem; color: var(--ink-faint); margin-top: .25rem; }
-
-  .steps { display: flex; flex-direction: column; margin-top: 1.25rem; }
-  .step { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding: 1.05rem 0; border-top: 1px solid var(--rule); }
-  .step:last-child { border-bottom: 1px solid var(--rule); }
-  .step-when { font-family: var(--f-num); font-size: .92rem; color: var(--sky-ink); padding-top: .15rem; }
-  .step h4 { font-size: 1.06rem; font-weight: 700; color: var(--ink); }
-  .step p { font-size: 1rem; margin-top: .2rem; }
 
   .callout { background: var(--indigo-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 1.4rem 1.5rem; margin-top: 1.5rem; }
   .callout h4 { font-family: var(--f-display); font-size: 1.18rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
@@ -287,7 +265,6 @@
   .toc .t-no { font-family: var(--f-num); font-size: .78rem; color: var(--ink-faint); flex: none; }
   .toc nav a.on .t-no { color: var(--indigo); }
   .toc .t-ttl { min-width: 0; }
-  .toc-foot { margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--rule); }
 
   .sec { scroll-margin-top: 4.5rem; }
 
@@ -298,9 +275,6 @@
     .callout > p, .callout > ul.marks,
     .sec-body > ul.marks,
     .t-note { max-width: 46rem; }
-
-    /* 項目カードを2列に */
-    .stack { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 1.1rem; }
 
     /* 料金の2案を左右に並べて比較しやすく */
     .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: start; }
@@ -320,7 +294,6 @@
   @media (max-width: 34rem) {
     .sec { grid-template-columns: 1fr; gap: .5rem; }
     .sec-no { border-top: none; padding-top: 0; }
-    .step { grid-template-columns: 1fr; gap: .1rem; }
   }
 
   @media print {
@@ -329,8 +302,8 @@
     html { font-size: 12pt; }
     .toolbar, .toc { display: none; }
     .doc { display: block; max-width: none; padding: 0; }
-    .stack, .price-grid { display: block; }
-    .sec, .item, .site, .price-box, .callout, .step, .map,
+    .price-grid { display: block; }
+    .sec, .price-box, .callout, .map,
     .browser, .sitecard, .legend { break-inside: avoid; page-break-inside: avoid; }
     .cover { padding-top: 1rem; }
     a { text-decoration: none; }
@@ -488,8 +461,8 @@
         </div>
       </div>
 
-      <div class="note" style="margin-top:2rem">
-        <h3>どちらの案でも、この2ページは全サイトに入ります</h3>
+      <div class="callout">
+        <h4>どちらの案でも、この2ページは全サイトに入ります</h4>
         <p>
           <strong>会社案内</strong>（法人の顔）と<strong>採用・スタッフ紹介</strong>（働き手への訴求）。
           内容はグループ共通なので、一度作ればすべてのサイトから同じページを見せられます。
@@ -1014,20 +987,6 @@
         この構成でご了解いただけたら、次は<strong>実際の色と書体を当てた「デザイン案」</strong>をお見せします。
         トップページを1枚だけ先にお作りし、方向性をご確認いただいてから全体を進めます。
       </p>
-      <h3>あわせて教えていただきたいこと</h3>
-      <p>いずれも<strong>構成の決定に直接かかわる</strong>ためです。取材の日程や写真・沿革などの素材は、構成が決まってからあらためてご相談します。</p>
-      <div class="scroll">
-        <table>
-          <thead><tr><th>内容</th><th>備考</th><th style="white-space:nowrap">必要度</th></tr></thead>
-          <tbody>
-            <tr><td>3サイト案・2サイト案のどちらで進めるか</td><td>ご予算とご希望に合わせてお選びください</td><td><span class="chip hi">必須</span></td></tr>
-            <tr><td>放課後等デイ2事業所の詳細</td><td>所在地・定員・利用時間・送迎の範囲</td><td><span class="chip hi">必須</span></td></tr>
-            <tr><td>ドメインの方針／今のHPの扱い</td><td>別ドメインかサブドメインか。公開後に閉じるか残すか</td><td><span class="chip hi">必須</span></td></tr>
-            <tr><td>「Hands of God」の位置づけ</td><td>どの事業として扱うか教えてください</td><td><span class="chip hi">必須</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <div class="end">
         <b>EasyWebCraft</b>
         初期費用0円・月額制のホームページ制作／運用サービス
