@@ -255,30 +255,6 @@
   .legend .sw.p { background: var(--wf-photo); }
   .legend .sw.b { background: var(--indigo); }
 
-  /* ---------- 表紙（PCでは2段組・要約を右に） ---------- */
-  .cover-side {
-    background: var(--paper-card); border: 1px solid var(--rule); border-radius: 8px;
-    border-top: 4px solid var(--indigo); padding: 1.4rem 1.5rem; margin-top: 2.5rem;
-    box-shadow: var(--shadow);
-  }
-  .cs-head {
-    font-family: var(--f-num); font-size: .8rem; letter-spacing: .16em;
-    color: var(--indigo); padding-bottom: .7rem; margin-bottom: .8rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .cs-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
-  .cs-list li { display: grid; grid-template-columns: 1.9rem 1fr; gap: .5rem; align-items: baseline; font-size: .98rem; color: var(--ink); font-weight: 700; }
-  .cs-list .n { font-family: var(--f-num); font-size: .82rem; color: var(--ink-faint); font-weight: 400; }
-  .cs-list .r { display: block; font-size: .86rem; color: var(--ink-faint); font-weight: 400; letter-spacing: 0; }
-  .cs-price { margin-top: 1.1rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
-  .cs-price b { font-family: var(--f-display); font-size: 1.45rem; color: var(--indigo); font-weight: 700; display: block; margin-bottom: .3rem; }
-  .cs-price span { font-size: .85rem; color: var(--ink-faint); display: block; }
-
-  @media (min-width: 64rem) {
-    .cover { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: 0 2.5rem; align-items: end; }
-    .cover-side { margin-top: 0; }
-  }
-
   /* ---------- PC向けレイアウト（目次を左に固定） ---------- */
   .toc { display: none; }
   /* 料金2案は既定では縦積み。広い画面で横並びにする（下の 78rem 指定） */
@@ -329,9 +305,6 @@
     /* 料金の2案を左右に並べて比較しやすく */
     .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: start; }
     .price-grid .price-box { margin-top: 1.5rem; }
-
-    /* 表紙の要約パネルを少し大きく */
-    .cover { grid-template-columns: minmax(0, 1fr) 19rem; gap: 0 3rem; }
   }
 
   .end { margin-top: 4.5rem; padding-top: 2rem; border-top: 2px solid var(--indigo); font-size: .95rem; color: var(--ink-faint); }
@@ -357,8 +330,6 @@
     .toolbar, .toc { display: none; }
     .doc { display: block; max-width: none; padding: 0; }
     .stack, .price-grid { display: block; }
-    .cover { display: block; }
-    .cover-side { margin-top: 2rem; }
     .sec, .item, .site, .price-box, .callout, .step, .map,
     .browser, .sitecard, .legend { break-inside: avoid; page-break-inside: avoid; }
     .cover { padding-top: 1rem; }
@@ -386,7 +357,6 @@
 
   <!-- ============ 表紙 ============ -->
   <header class="cover">
-    <div class="cover-main">
     <div class="cover-brand">EasyWebCraft</div>
     <div class="cover-to">株式会社 A and K<br><b>かみのてグループ</b> 御中</div>
 
@@ -407,20 +377,7 @@
       <span>2026年7月28日</span>
       <span>ご提案：EasyWebCraft</span>
     </div>
-    </div>
 
-    <aside class="cover-side">
-      <div class="cs-head">お決めいただくこと</div>
-      <ul class="cs-list">
-        <li><span class="n">A</span><span>3サイト案<span class="r">放課後等デイを事業所ごとに分ける／月額21,000円</span></span></li>
-        <li><span class="n">B</span><span>2サイト案<span class="r">放課後等デイを1つにまとめる／月額17,000円</span></span></li>
-      </ul>
-      <div class="cs-price">
-        <b>この2案のどちらか</b>
-        <span>いま決めていただくのは、まずこれだけです</span>
-        <span>デザインは次の工程でご相談します</span>
-      </div>
-    </aside>
   </header>
 
   <!-- ============ 00 伺ったご要望 ============ -->
