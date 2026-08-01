@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""~/ewc-docs の Artifact 用HTML断片を、GitHub Pages で配れる完全なHTMLに変換する。
+"""src/ の Artifact 用HTML断片を、GitHub Pages で配れる完全なHTMLに変換する。
 
 Artifact は publish 時に <!doctype>〜<head> とリセットCSSを自動で被せてくれるが、
 GitHub Pages は素のファイルをそのまま配信するため、それを自前で用意する必要がある。
 特に viewport が無いとスマホでPCレイアウトが縮小表示になる。
 
-原本は ~/ewc-docs/ のままにして、こちらは生成物だけを置く（二重管理を避ける）。
-編集は原本に対して行い、このスクリプトを再実行する。
+原本（src/）も生成物（リポジトリ直下）も一緒にコミットする。デザインを戻したいときに
+git revert 一発で済むようにするため。編集は src/ に対して行い、このスクリプトを再実行する。
 """
 
 import html
 import pathlib
 import re
 
-SRC = pathlib.Path.home() / "ewc-docs"
+SRC = pathlib.Path(__file__).resolve().parent / "src"
 DST = pathlib.Path(__file__).resolve().parent
 BASE_URL = "https://k-matsumoto527.github.io/kaminote-proposal"
 

@@ -16,26 +16,39 @@
 <https://unsplash.com/photos/brown-wooden-toy-blocks-GQ327RPuxhI>。
 帰属表示は不要だが、差し替えるときのために記録しておく。**Unsplash+ の有料写真は使わないこと。**
 
-`index.html` からは相対パスで参照しているので、原本（`~/ewc-docs/`）を単体で開くと表紙の写真だけ出ない。
+`index.html` からは相対パスで参照しているので、原本（`src/`）を単体で開くと表紙の写真だけ出ない。
 
 ## 中身の直し方
 
-`index.html` は**生成物なので直接編集しない**。原本は `~/ewc-docs/proposal-kaminote.html`。
+`index.html` は**生成物なので直接編集しない**。原本は `src/proposal-kaminote.html`。
+
+**原本も生成物も一緒にコミットする。** デザインを戻したいときに `git revert` 一発で済むようにするため。
+原本をリポジトリの外に置いていた頃は、生成物だけ戻しても次のビルドで元に戻ってしまう事故があった。
 
 もとは提案書と構成イメージの2ページだったが、行き来が発生して読みにくいため1ページに統合した。
-`~/ewc-docs/kaminote-wireframe.html` は統合前の構成イメージで、**もう公開には使っていない**
-（Artifact 版が残っているだけ）。`structure.html` は統合前のURLを開いた人のための転送ページで、
-`build.py` が生成する。
+`src/archive/kaminote-wireframe.html` は統合前の構成イメージで、**もう公開には使っていない**
+（Artifact 版が残っているだけ）。ビルド対象にも入っていない。`structure.html` は統合前のURLを
+開いた人のための転送ページで、`build.py` が生成する。
 
 原本は Claude の Artifact 用のHTML断片で、`<!doctype>` や `<head>` を持たない（publish 時に自動で付くため）。
 GitHub Pages は素のファイルをそのまま配信するので、`build.py` がその外側とリセットCSSを被せ、
 Artifact URL で書かれた相互リンクを相対パスに張り替える。
 
 ```sh
-# 原本を編集したあとに
+# src/proposal-kaminote.html を編集したあとに
 python3 build.py
 git commit -am "内容を更新" && git push
 ```
+
+ファイルの置き方:
+
+| パス | 役割 |
+| --- | --- |
+| `src/proposal-kaminote.html` | **原本**。編集するのはここだけ |
+| `src/archive/kaminote-wireframe.html` | 統合前の構成イメージ。ビルドしない |
+| `index.html` / `structure.html` | 生成物。直接編集しない |
+| `hero.jpg` | 表紙の背景 |
+| `build.py` | 原本 → 生成物 |
 
 Artifact 版も使い続けるなら、原本を編集したあと Artifact 側も再 publish する（同じ file_path なら同じURLのまま）。
 
