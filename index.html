@@ -168,17 +168,31 @@
   .foot-note { margin-top: 1.1rem; padding-top: .9rem; font-size: .82rem;
                color: rgba(255, 255, 255, .5); border-top: 1px solid rgba(255, 255, 255, .12); }
 
-  /* 表紙は写真の上に明るいオーバーレイを重ねて、写真を活かしたまま文字を読ませる。
-     オーバーレイは白。クリーム色にすると、地色が白のこの資料では表紙だけ浮くうえ、
-     写真の木のテーブルと重なって全体がセピア調になる。
+  /* 表紙は写真の上に白のオーバーレイを重ねて、写真を活かしたまま文字を読ませる。
+     写真は右側（工作の手元）が見どころで、文字は左に寄っているので、
+     左を白く伏せて右へ向かって薄くする。全体を一律に薄くすると本文が読めなくなる。
+     クリーム色のオーバーレイは、地色が白のこの資料では表紙だけ浮くので使わない。
      最後の単色は画像が読めなかったときのフォールバック。 */
   .cover {
     background:
-      linear-gradient(rgba(255, 255, 255, .90) 0%, rgba(255, 255, 255, .84) 50%, rgba(255, 255, 255, .93) 100%),
+      linear-gradient(100deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .93) 40%,
+                              rgba(255, 255, 255, .58) 70%, rgba(255, 255, 255, .32) 100%),
       url('hero.jpg') center / cover no-repeat,
       var(--paper);
     color: var(--ink); border-bottom: none;
     border-radius: 12px; padding: 3.5rem 2rem 3rem; margin-top: 2rem;
+    min-height: 30rem; display: flex; flex-direction: column; justify-content: center;
+  }
+  /* 狭い画面では文字が横幅いっぱいに広がり、右側の写真と重なってしまう。
+     そこでは全体を一律に伏せる（背も詰める）。 */
+  @media (max-width: 54rem) {
+    .cover {
+      background:
+        linear-gradient(rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .88) 50%, rgba(255, 255, 255, .94) 100%),
+        url('hero.jpg') center / cover no-repeat,
+        var(--paper);
+      min-height: 0; display: block;
+    }
   }
   .cover > * { text-shadow: 0 1px 10px rgba(255, 255, 255, .85); }
   .cover-to { color: var(--ink-soft); }
