@@ -11,10 +11,15 @@
 
 ## 素材
 
-`hero.jpg` は表紙の背景。Unsplash の無料ライセンス（Unsplash License）の写真で、
-撮影は Susan Holt Simpson（@shs521）。出典は
-<https://unsplash.com/photos/brown-wooden-toy-blocks-GQ327RPuxhI>。
-帰属表示は不要だが、差し替えるときのために記録しておく。**Unsplash+ の有料写真は使わないこと。**
+`hero.jpg` は表紙の背景。**松本さんからご提供いただいた写真**（工作をしている手元。顔は写っていない）。
+2026-08-01に Unsplash の積み木の写真から差し替えた。
+
+元データは 2.7MB の PNG だったので、JPEG（品質0.78・1453px幅・162KB）に再エンコードしている。
+この環境には Pillow も ImageMagick も無いため、ヘッドレスの Edge で canvas に描いて
+`toDataURL('image/jpeg')` した結果を取り出す方法で変換した（`build.py` には組み込んでいない）。
+
+差し替えるときは、同じ手順で軽くしてから `hero.jpg` を置き換える。
+ストック写真を使う場合は Unsplash の無料ライセンスのものを選ぶこと（**Unsplash+ の有料写真は不可**）。
 
 `index.html` からは相対パスで参照しているので、原本（`src/`）を単体で開くと表紙の写真だけ出ない。
 
