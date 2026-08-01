@@ -143,7 +143,14 @@
   ul.marks li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; height: .45rem; background: var(--amber); border-radius: 50%; }
 
   .map { background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; padding: 1.1rem 1.25rem; margin-top: 1rem; overflow-x: auto; }
-  .map pre { font-family: var(--f-num); font-size: .95rem; line-height: 1.85; color: var(--ink-soft); white-space: pre; }
+  /* 罫線のツリー（pre）は折り返せず、狭い画面で横スクロールになるため入れ子リストにした */
+  .pagetree { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+  .pagetree li { padding-left: .9rem; border-left: 2px solid var(--rule); }
+  .pagetree b { color: var(--ink); font-weight: 700; }
+  .pagetree span { display: block; font-size: .9rem; color: var(--ink-faint); margin-top: .1rem; }
+  .pagetree i { font-style: normal; font-family: var(--f-num); font-size: .76rem; color: var(--indigo);
+                background: var(--indigo-bg); border-radius: 999px; padding: .15em .7em;
+                margin-left: .5rem; white-space: nowrap; }
   .map-cap { font-size: .9rem; color: var(--ink-faint); margin-bottom: .6rem; letter-spacing: .04em; }
 
   .scroll { overflow-x: auto; margin-top: 1.25rem; }
@@ -163,10 +170,30 @@
   .cmp th + th { border-left: 1px solid var(--rule); }
   .cmp td + td { border-left: 1px solid var(--rule); }
 
+  /* スマホでは横スクロールさせず、項目ごとに縦へ積み替える。
+     見出し行が消えるので、どちらの案かは data-plan から出す。 */
+  @media (max-width: 40rem) {
+    .cmp { min-width: 0; table-layout: auto; }
+    .cmp, .cmp tbody, .cmp tr, .cmp td { display: block; width: auto; }
+    /* 上の width:auto より詳細度が高い列幅指定を、同じ形で打ち消す */
+    .cmp th:first-child, .cmp td:first-child,
+    .cmp th + th, .cmp td + td { width: auto; }
+    .cmp thead { display: none; }
+    .cmp tr { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+    .cmp tbody tr:last-child { border-bottom: none; }
+    .cmp td { padding: 0; border: none; }
+    .cmp td:first-child { font-size: 1.03rem; color: var(--ink); font-weight: 700; margin-bottom: .6rem; }
+    .cmp td + td { border-left: 2px solid var(--rule); padding: .1rem 0 .1rem .8rem; margin-top: .5rem; }
+    .cmp td[data-plan]::before {
+      content: attr(data-plan); display: block; font-family: var(--f-num);
+      font-size: .8rem; letter-spacing: .06em; color: var(--indigo); margin-bottom: .15rem;
+    }
+  }
+
   .site-tag { font-family: var(--f-num); font-size: .84rem; letter-spacing: .12em; color: var(--indigo); }
 
   .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); }
-  .price { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: 2.7rem; color: var(--ink); line-height: 1.15; }
+  .price { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: clamp(2rem, 9vw, 2.7rem); color: var(--ink); line-height: 1.15; }
   .price small { font-size: .92rem; color: var(--ink-faint); font-family: var(--f-body); }
   .price-sub { font-size: .95rem; color: var(--ink-faint); margin-top: .25rem; }
 
@@ -397,17 +424,17 @@
         <table class="cmp">
           <thead><tr><th></th><th>3サイト案</th><th>2サイト案</th></tr></thead>
           <tbody>
-            <tr><td><strong>放課後等デイの扱い</strong></td><td>事業所ごとに分ける</td><td>1つにまとめる</td></tr>
+            <tr><td><strong>放課後等デイの扱い</strong></td><td data-plan="3サイト案">事業所ごとに分ける</td><td data-plan="2サイト案">1つにまとめる</td></tr>
             <tr>
               <td><strong>構成</strong></td>
-              <td>① 保育園（2園＋病児保育）<br>② かみのてKIDS<br>③ かみのてSMILE</td>
-              <td>① 保育園（2園＋病児保育）<br>② 放課後等デイ（KIDS・SMILE）</td>
+              <td data-plan="3サイト案">① 保育園（2園＋病児保育）<br>② かみのてKIDS<br>③ かみのてSMILE</td>
+              <td data-plan="2サイト案">① 保育園（2園＋病児保育）<br>② 放課後等デイ（KIDS・SMILE）</td>
             </tr>
-            <tr><td><strong>月額（税別）</strong></td><td class="num">21,000円</td><td class="num">17,000円</td></tr>
+            <tr><td><strong>月額（税別）</strong></td><td class="num" data-plan="3サイト案">21,000円</td><td class="num" data-plan="2サイト案">17,000円</td></tr>
             <tr>
               <td><strong>向いているケース</strong></td>
-              <td>事業所ごとの空き状況・お知らせを出したい／<strong>今後ここから派生する事業を手がける予定がある</strong></td>
-              <td>管理をシンプルにしたい／費用を抑えたい</td>
+              <td data-plan="3サイト案">事業所ごとの空き状況・お知らせを出したい／<strong>今後ここから派生する事業を手がける予定がある</strong></td>
+              <td data-plan="2サイト案">管理をシンプルにしたい／費用を抑えたい</td>
             </tr>
           </tbody>
         </table>
@@ -664,25 +691,20 @@
 
       <p class="caption" style="margin-top:1.5rem"><b>保育園サイトのページ構成</b>（ヒアリングで伺った内容を反映しています）</p>
       <div class="map">
-        <div class="map-cap">ページ構成（インデントは、そのページの中の見出しです）</div>
-<pre>トップ
-├─ 私たちについて
-│    私たちの想い／保育理念・保育方針／園長メッセージ／法人・園の概要
-├─ かみのての保育
-│    大切にしていること／保育内容／多文化・国際的な環境
-│    食事・食育／健康・安全管理／看護師との連携
-├─ 園のご紹介
-│    かみのて保育園／かみのて今渡保育園／園内・設備紹介
-├─ 病児保育のご案内
-├─ 園での生活
-│    1日の流れ／年間行事／園児の過ごし方
-├─ 入園案内
-│    企業主導型保育園とは／対象年齢・定員／開園時間
-│    保育料金／入園までの流れ／提携企業について
-├─ かみのてで働く人　　※グループ共通ページ
-├─ 会社案内　　　　　　※グループ共通ページ
-├─ お知らせ・園の日記
-└─ アクセス・お問い合わせ</pre>
+        <div class="map-cap">ページ構成（下段は、そのページの中に入る見出しです）</div>
+        <ul class="pagetree">
+          <li><b>トップ</b></li>
+          <li><b>私たちについて</b><span>私たちの想い／保育理念・保育方針／園長メッセージ／法人・園の概要</span></li>
+          <li><b>かみのての保育</b><span>大切にしていること／保育内容／多文化・国際的な環境／食事・食育／健康・安全管理／看護師との連携</span></li>
+          <li><b>園のご紹介</b><span>かみのて保育園／かみのて今渡保育園／園内・設備紹介</span></li>
+          <li><b>病児保育のご案内</b></li>
+          <li><b>園での生活</b><span>1日の流れ／年間行事／園児の過ごし方</span></li>
+          <li><b>入園案内</b><span>企業主導型保育園とは／対象年齢・定員／開園時間／保育料金／入園までの流れ／提携企業について</span></li>
+          <li><b>かみのてで働く人</b><i>グループ共通</i></li>
+          <li><b>会社案内</b><i>グループ共通</i></li>
+          <li><b>お知らせ・園の日記</b></li>
+          <li><b>アクセス・お問い合わせ</b></li>
+        </ul>
       </div>
 
       <p class="caption" style="margin-top:1.5rem">
