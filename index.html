@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 特定のお客さま向けの資料なので検索避けする（URLを知っている人は見られる） -->
 <meta name="robots" content="noindex, nofollow, noarchive">
+<!-- kids-support-sample と同じ丸ゴシック。読めない環境では端末のゴシックに落ちる -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <title>株式会社 A and K サイト構成のご提案｜EasyWebCraft</title>
 <meta name="description" content="株式会社 A and K さま向けのサイト構成のご提案です。放課後等デイを事業所ごとに分ける3サイト案と、1つにまとめる2サイト案を画面の並び（間取り図）つきでご比較いただけます。">
 <meta property="og:type" content="article">
@@ -25,78 +29,79 @@
 <body>
 <style>
   /* ---------- トークン ---------- */
+  /* kids-support-sample に合わせた、クリーム地＋ミント／オレンジのやわらかい配色。
+     文字色は黒ではなく温かみのあるこげ茶（--ink）。 */
   :root {
-    /* EasyWebCraft のLPと同じ配色（白地・濃紺・黄アクセント） */
-    --paper:      #ffffff;
+    --paper:      #fdfaf2;   /* サンプル --cream（地色） */
     --paper-card: #ffffff;
-    --paper-sunk: #f7fafd;
-    --ink:        #1a2433;
-    --ink-soft:   #35435a;
-    --ink-faint:  #5b6b7e;
-    --rule:       #dde6f0;
-    --indigo:     #0d3a7d;   /* LP --navy */
-    --indigo-bg:  #eef4fb;   /* LP --wash */
-    --amber:      #ffc61a;   /* LP --accent（面・点で使う） */
-    --amber-ink:  #7a5300;   /* 黄系を文字に使うとき（白地でのコントラスト確保） */
-    --amber-bg:   #fff8e1;
-    --mk:         #fff23c;   /* LP --mk（マーカー） */
-    --sky:        #3f8ecf;   /* 面・罫線用（LPそのまま） */
-    --sky-ink:    #2a6ca8;   /* 文字用に濃くしたもの（白地で5.5:1） */
-    --clay:       #d2564a;
-    --clay-bg:    #fdeeeb;
-    --sage:       #0d3a7d;
-    --sage-bg:    #eef4fb;
-    --shadow:     0 10px 30px rgba(13, 58, 125, .08);
+    --paper-sunk: #fef4e4;   /* サンプル --cream-deep */
+    --ink:        #574d43;
+    --ink-soft:   #756a5e;
+    --ink-faint:  #a2968a;
+    --rule:       #efe6d6;
+    --indigo:     #5fb487;   /* サンプル --mint-dark（主役の色） */
+    --indigo-bg:  #e6f4ec;   /* サンプル --mint-soft */
+    --amber:      #f5a25a;   /* サンプル --orange */
+    --amber-ink:  #ef8f3e;   /* サンプル --orange-dark */
+    --amber-bg:   #fdead6;   /* サンプル --orange-soft */
+    --mk:         #fdead6;   /* 見出しのマーカーもオレンジ系に */
+    --sky:        #8fcfe0;
+    --sky-ink:    #4d9db4;
+    --clay:       #ef8f3e;
+    --clay-bg:    #fdead6;
+    --sage:       #5fb487;
+    --sage-bg:    #e6f4ec;
+    --shadow:     0 8px 22px rgba(87, 77, 67, .09);
 
-    --indigo-deep: #081c3f;   /* LP --navy-deep */
-    --accent-ink: #3a2e00;   /* LP 黄ボタンの文字色 */
+    --mint:       #7fc6a0;
+    --accent-ink: #ffffff;   /* オレンジのボタンは白文字 */
 
     --col: 37rem;
     --rail: 5rem;
 
-    /* 間取り図（ワイヤーフレーム）の部品色。白地に合わせて寒色寄りのグレーに */
-    --wf-line: #cbd8e6; --wf-fill: #e6eef7; --wf-photo: #d5e1ee; --wf-head: #8fa5c0;
+    /* 間取り図の部品色。地色に合わせて暖色寄りのグレーに */
+    --wf-line: #e7dccb; --wf-fill: #f3ebdd; --wf-photo: #ece2d1; --wf-head: #bdae9b;
 
-    /* LPと同じくゴシック1本。Noto Sans JP は端末にあれば使われる
-       （Artifactは外部フォントを読み込めないためWebフォント指定はしない） */
-    --f-display: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    /* サンプルと同じ丸ゴシック。読み込めない環境では既存のゴシックに落ちる */
+    --f-display: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
                  Meiryo, "Yu Gothic UI", "Yu Gothic", sans-serif;
-    --f-body: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    --f-body: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
               Meiryo, "Yu Gothic UI", "Yu Gothic", sans-serif;
     --f-num: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
   }
 
+  /* サンプルにダークモードは無いが、端末設定で暗くなる場合に備えて暖色の暗色を用意する */
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #0f1520; --paper-card: #161e2c; --paper-sunk: #121a26;
-      --ink: #eef3fa; --ink-soft: #c2cddd; --ink-faint: #93a2b6; --rule: #2a3547;
-      --indigo: #8fb6ee; --indigo-bg: #17233a;
-      --amber: #ffc61a; --amber-ink: #ffd75e; --amber-bg: #2b2415; --mk: #6b6410;
-      --sky: #6aa9de; --sky-ink: #85b8e6; --clay: #e8897d; --clay-bg: #2c1d1b;
-      --sage: #8fb6ee; --sage-bg: #17233a;
-      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-      --wf-line: #3a4557; --wf-fill: #232d3d; --wf-photo: #2c3849; --wf-head: #61748c;
+      --paper: #241f1a; --paper-card: #2e2823; --paper-sunk: #332c25;
+      --ink: #f2ece3; --ink-soft: #cdc3b6; --ink-faint: #a3988a; --rule: #443b32;
+      --indigo: #8ed3ae; --indigo-bg: #26332c;
+      --amber: #f5a25a; --amber-ink: #f7b478; --amber-bg: #3a2c1e; --mk: #6a4c26;
+      --sky: #8fcfe0; --sky-ink: #8fcfe0; --clay: #f7b478; --clay-bg: #3a2c1e;
+      --sage: #8ed3ae; --sage-bg: #26332c;
+      --shadow: 0 8px 22px rgba(0, 0, 0, .35);
+      --wf-line: #4a4038; --wf-fill: #3a322b; --wf-photo: #443b32; --wf-head: #7d7062;
     }
   }
   :root[data-theme="dark"] {
-    --wf-line: #3a4557; --wf-fill: #232d3d; --wf-photo: #2c3849; --wf-head: #61748c;
-    --paper: #0f1520; --paper-card: #161e2c; --paper-sunk: #121a26;
-    --ink: #eef3fa; --ink-soft: #c2cddd; --ink-faint: #93a2b6; --rule: #2a3547;
-    --indigo: #8fb6ee; --indigo-bg: #17233a;
-    --amber: #ffc61a; --amber-ink: #ffd75e; --amber-bg: #2b2415; --mk: #6b6410;
-    --sky: #6aa9de; --sky-ink: #85b8e6; --clay: #e8897d; --clay-bg: #2c1d1b;
-    --sage: #8fb6ee; --sage-bg: #17233a;
-    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    --paper: #241f1a; --paper-card: #2e2823; --paper-sunk: #332c25;
+    --ink: #f2ece3; --ink-soft: #cdc3b6; --ink-faint: #a3988a; --rule: #443b32;
+    --indigo: #8ed3ae; --indigo-bg: #26332c;
+    --amber: #f5a25a; --amber-ink: #f7b478; --amber-bg: #3a2c1e; --mk: #6a4c26;
+    --sky: #8fcfe0; --sky-ink: #8fcfe0; --clay: #f7b478; --clay-bg: #3a2c1e;
+    --sage: #8ed3ae; --sage-bg: #26332c;
+    --shadow: 0 8px 22px rgba(0, 0, 0, .35);
+    --wf-line: #4a4038; --wf-fill: #3a322b; --wf-photo: #443b32; --wf-head: #7d7062;
   }
   :root[data-theme="light"] {
-    --wf-line: #cbd8e6; --wf-fill: #e6eef7; --wf-photo: #d5e1ee; --wf-head: #8fa5c0;
-    --paper: #ffffff; --paper-card: #ffffff; --paper-sunk: #f7fafd;
-    --ink: #1a2433; --ink-soft: #35435a; --ink-faint: #5b6b7e; --rule: #dde6f0;
-    --indigo: #0d3a7d; --indigo-bg: #eef4fb;
-    --amber: #ffc61a; --amber-ink: #7a5300; --amber-bg: #fff8e1; --mk: #fff23c;
-    --sky: #3f8ecf; --sky-ink: #2a6ca8; --clay: #d2564a; --clay-bg: #fdeeeb;
-    --sage: #0d3a7d; --sage-bg: #eef4fb;
-    --shadow: 0 10px 30px rgba(13, 58, 125, .08);
+    --paper: #fdfaf2; --paper-card: #ffffff; --paper-sunk: #fef4e4;
+    --ink: #574d43; --ink-soft: #756a5e; --ink-faint: #a2968a; --rule: #efe6d6;
+    --indigo: #5fb487; --indigo-bg: #e6f4ec;
+    --amber: #f5a25a; --amber-ink: #ef8f3e; --amber-bg: #fdead6; --mk: #fdead6;
+    --sky: #8fcfe0; --sky-ink: #4d9db4; --clay: #ef8f3e; --clay-bg: #fdead6;
+    --sage: #5fb487; --sage-bg: #e6f4ec;
+    --shadow: 0 8px 22px rgba(87, 77, 67, .09);
+    --wf-line: #e7dccb; --wf-fill: #f3ebdd; --wf-photo: #ece2d1; --wf-head: #bdae9b;
   }
 
   /* ---------- 土台 ---------- */
@@ -128,8 +133,8 @@
   .cover-to { font-size: 1.02rem; color: var(--ink-soft); margin-bottom: .35rem; }
   .cover-to b { font-family: var(--f-display); font-size: 1.5rem; color: var(--ink); font-weight: 700; }
   .cover h1 {
-    font-family: var(--f-display); font-weight: 700;
-    font-size: clamp(1.85rem, 6vw, 2.9rem); line-height: 1.42;
+    font-family: var(--f-display); font-weight: 900;
+    font-size: clamp(1.85rem, 6vw, 2.9rem); line-height: 1.5;
     letter-spacing: -.01em; text-wrap: balance; margin: 1.75rem 0 1.2rem;
   }
   .cover h1 .accent { color: var(--indigo); }
@@ -140,22 +145,23 @@
   /* ---------- LPに合わせた外枠（ヘッダー・表紙・帯・フッター） ---------- */
   /* easyweb-lp と同じ「濃紺の固定ヘッダー → 濃紺のヒーロー → 白と薄青の交互」の
      組み立てを持ち込む。本文の左揃えと目次はそのままにして読みやすさは変えない。 */
-  .topbar { position: sticky; top: 0; z-index: 60; background: rgba(8, 28, 63, .93);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, .08); }
+  .topbar { position: sticky; top: 0; z-index: 60; background: rgba(253, 250, 242, .92);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--paper-sunk); }
   .topbar-in { max-width: 86rem; margin: 0 auto; padding: .65rem 1.5rem;
                display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
   .topbar-brand { display: flex; align-items: baseline; gap: .9rem; min-width: 0; }
-  .topbar-logo { font-family: var(--f-display); font-weight: 800; font-size: 1.05rem;
-                 letter-spacing: .02em; color: #fff; white-space: nowrap; }
+  .topbar-logo { font-family: var(--f-display); font-weight: 900; font-size: 1.15rem;
+                 letter-spacing: .02em; color: var(--ink); white-space: nowrap; }
+  .topbar-logo span { color: var(--amber-ink); }
   /* 説明文は幅が足りない画面では隠す（ロゴとボタンを優先） */
-  .topbar-tag { font-size: .76rem; color: rgba(255, 255, 255, .6); white-space: nowrap; }
+  .topbar-tag { font-size: .76rem; color: var(--ink-soft); white-space: nowrap; }
   @media (max-width: 56rem) { .topbar-tag { display: none; } }
-  .topbar-logo span { color: var(--amber); }
-  .topbar-btn { font-family: var(--f-body); font-weight: 800; font-size: .85rem;
+  .topbar-btn { font-family: var(--f-body); font-weight: 700; font-size: .85rem;
                 background: var(--amber); color: var(--accent-ink); border: none;
-                border-radius: 999px; padding: .5rem 1.15rem; cursor: pointer; white-space: nowrap; }
-  .topbar-btn:hover { filter: brightness(1.06); }
+                border-radius: 40px; padding: .55rem 1.3rem; cursor: pointer; white-space: nowrap;
+                box-shadow: 0 6px 14px rgba(245, 162, 90, .32); transition: transform .15s, box-shadow .2s; }
+  .topbar-btn:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgba(245, 162, 90, .4); }
 
   /* 表紙は kids-support-sample のヒーローと同じ作り。
      写真を紺で沈めるのではなく、クリーム色の明るいオーバーレイを重ねて写真を活かし、
@@ -166,14 +172,15 @@
       url('hero.jpg') center / cover no-repeat,
       #fdfaf2;
     color: var(--ink); border-bottom: none;
-    border-radius: 12px; padding: 3.5rem 2rem 3rem; margin-top: 2rem;
+    border-radius: 24px; padding: 3.5rem 2rem 3rem; margin-top: 2rem;
   }
   .cover > * { text-shadow: 0 1px 10px rgba(253, 250, 242, .85); }
   .cover-to { color: var(--ink-soft); }
   .cover-to b { color: var(--ink); }
   .cover h1 { color: var(--ink); }
   /* アクセントは黄色のマーカー。LPの --mk と、参考サイトのマーカー表現の両方に合う */
-  .cover h1 .accent { color: var(--indigo);
+  /* サンプルと同じく、マーカーの上の文字は濃いままにする（薄い色だと沈む） */
+  .cover h1 .accent { color: var(--ink);
                       background: linear-gradient(transparent 64%, var(--mk) 64%); }
   .cover-lead { color: var(--ink-soft); }
   .cover-lead strong { color: var(--ink); }
@@ -181,21 +188,21 @@
 
   /* 節の英字ラベル（LPの PROBLEM / ABOUT にあたるもの） */
   .sec-label { font-family: var(--f-num); font-size: .76rem; letter-spacing: .18em;
-               text-transform: uppercase; color: var(--sky-ink); margin-bottom: .3rem; }
+               text-transform: uppercase; color: var(--amber-ink); font-weight: 700; margin-bottom: .3rem; }
+  .sec-label::before { content: "🌱 "; }
 
   /* 節ごとに白と薄青を交互に。帯の中の箱は白にしてLPのカードの見え方に寄せる */
-  .sec.tint { background: var(--indigo-bg); border-radius: 12px;
-              padding: 3rem 1.75rem 2.5rem; margin-top: 2rem; }
-  .sec.tint .callout { background: var(--paper-card); }
+  .sec.tint { background: var(--paper-card); border-radius: 24px;
+              padding: 3rem 1.75rem 2.5rem; margin-top: 2rem; box-shadow: var(--shadow); }
+  .sec.tint .callout { background: var(--indigo-bg); }
   .sec.tint .callout.warn { background: var(--amber-bg); }
-  .sec.tint .map { background: var(--paper-card); }
-  .sec.tint .legend { background: var(--paper-card); }
+  .sec.tint .map, .sec.tint .legend { background: var(--paper-sunk); }
 
   /* ---------- 節 ---------- */
   .sec { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 0 1.6rem; padding-top: 4.5rem; }
   .sec-no { font-family: var(--f-num); font-size: .95rem; color: var(--ink-faint); padding-top: .6rem; border-top: 3px solid var(--indigo); align-self: start; letter-spacing: .06em; }
   .sec-body { min-width: 0; padding-top: .5rem; }
-  .sec h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.45rem, 4.6vw, 1.9rem); line-height: 1.5; text-wrap: balance; margin-bottom: .9rem; letter-spacing: -.01em; }
+  .sec h2 { font-family: var(--f-display); font-weight: 900; font-size: clamp(1.45rem, 4.6vw, 1.9rem); line-height: 1.5; text-wrap: balance; margin-bottom: .9rem; letter-spacing: -.01em; }
   .sec h3 { font-size: 1.14rem; font-weight: 700; color: var(--ink); margin: 2.1rem 0 .6rem; letter-spacing: .02em; }
   .sec > .sec-body > p + p { margin-top: .9rem; }
   .lede { font-size: 1.12rem; color: var(--ink); }
@@ -205,7 +212,7 @@
   ul.marks li { position: relative; padding-left: 1.5rem; font-size: 1.03rem; }
   ul.marks li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; height: .45rem; background: var(--amber); border-radius: 50%; }
 
-  .map { background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; padding: 1.1rem 1.25rem; margin-top: 1rem; overflow-x: auto; }
+  .map { background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 18px; padding: 1.1rem 1.25rem; margin-top: 1rem; overflow-x: auto; }
   /* 罫線のツリー（pre）は折り返せず、狭い画面で横スクロールになるため入れ子リストにした */
   .pagetree { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
   .pagetree li { padding-left: .9rem; border-left: 2px solid var(--rule); }
@@ -255,12 +262,12 @@
 
   .site-tag { font-family: var(--f-num); font-size: .84rem; letter-spacing: .12em; color: var(--indigo); }
 
-  .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); }
+  .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 20px; box-shadow: var(--shadow); }
   .price { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: clamp(2rem, 9vw, 2.7rem); color: var(--ink); line-height: 1.15; }
   .price small { font-size: .92rem; color: var(--ink-faint); font-family: var(--f-body); }
   .price-sub { font-size: .95rem; color: var(--ink-faint); margin-top: .25rem; }
 
-  .callout { background: var(--indigo-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 1.4rem 1.5rem; margin-top: 1.5rem; }
+  .callout { background: var(--indigo-bg); border: 1px solid var(--rule); border-radius: 18px; padding: 1.4rem 1.5rem; margin-top: 1.5rem; }
   .callout h4 { font-family: var(--f-display); font-size: 1.18rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
   .callout p { font-size: 1.02rem; }
   .callout p + p { margin-top: .6rem; }
@@ -268,7 +275,7 @@
 
 
   /* ---------- 間取り図: サイト構成 ---------- */
-  .hub { background: var(--indigo); color: #fff; text-align: center; padding: 1rem; border-radius: 6px; font-family: var(--f-display); font-size: 1.25rem; font-weight: 700; letter-spacing: .04em; box-shadow: var(--shadow); margin-top: 1.5rem; }
+  .hub { background: var(--indigo); color: #fff; text-align: center; padding: 1.1rem; border-radius: 18px; font-family: var(--f-display); font-size: 1.25rem; font-weight: 900; letter-spacing: .04em; box-shadow: var(--shadow); margin-top: 1.5rem; }
   .hub-sub { display: block; font-family: var(--f-body); font-size: .85rem; font-weight: 400; opacity: .85; letter-spacing: .02em; margin-top: .2rem; }
   .connector { height: 1.6rem; border-left: 2px solid var(--rule); width: 0; margin: 0 auto; }
   /* 1fr ではなく minmax(0, 1fr)。1fr の下限は min-content なので、中身が狭い画面より
@@ -279,7 +286,7 @@
     .sites { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .sites.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-  .sitecard { background: var(--paper-card); border: 1px solid var(--rule); border-top: 5px solid var(--indigo); border-radius: 6px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .35rem; box-shadow: var(--shadow); }
+  .sitecard { background: var(--paper-card); border: 1px solid var(--rule); border-top: 5px solid var(--indigo); border-radius: 18px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .35rem; box-shadow: var(--shadow); }
   .sitecard.s-hoiku { border-top-color: var(--indigo); }
   .sitecard.s-dei   { border-top-color: var(--amber); }
   .sitecard .n { font-family: var(--f-num); font-size: .8rem; color: var(--ink-faint); letter-spacing: .1em; }
@@ -292,7 +299,7 @@
   .frames > * { min-width: 0; }
   @media (min-width: 54rem) { .frames.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-  .browser { border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--paper-card); box-shadow: var(--shadow); }
+  .browser { border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; background: var(--paper-card); box-shadow: var(--shadow); }
   .browser-bar { display: flex; align-items: center; gap: .4rem; padding: .5rem .7rem; background: var(--paper-sunk); border-bottom: 1px solid var(--rule); }
   .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--wf-line); }
   .url { flex: 1; margin-left: .5rem; font-family: var(--f-num); font-size: .72rem; color: var(--ink-faint); background: var(--paper-card); border: 1px solid var(--rule); padding: .15rem .5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -324,7 +331,7 @@
   .pages { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
   .pages span { font-size: .88rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 999px; padding: .28em .8em; color: var(--ink-soft); }
   .pages span.top { background: var(--indigo-bg); color: var(--indigo); font-weight: 700; }
-  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 18px; }
   /* flex だとテキストが無名アイテムになり min-width を指定できず折り返せない。
      grid にして2列目を minmax(0,1fr) にすると狭い画面でも折り返る。 */
   .legend div { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
