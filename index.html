@@ -116,7 +116,12 @@
 
   /* ---------- 表紙 ---------- */
   .cover { padding: 3.25rem 0 3rem; border-bottom: 1px solid var(--rule); }
-  .cover-brand { font-family: var(--f-num); font-size: .92rem; letter-spacing: .22em; text-transform: uppercase; color: var(--indigo); margin-bottom: 1.75rem; }
+  /* LPのロゴ（EasyWeb＋Craft、Craftだけアクセント色・太字）に合わせる。
+     LPは濃紺地に白＋#ffc61a だが、この資料は白地なので反転させ、
+     Craft には白地でも読める黄系（--amber-ink）を使う。 */
+  .cover-brand { font-family: var(--f-display); font-size: 1.2rem; font-weight: 800;
+                 letter-spacing: .02em; color: var(--indigo); margin-bottom: 1.75rem; }
+  .cover-brand span { color: var(--amber-ink); }
   .cover-to { font-size: 1.02rem; color: var(--ink-soft); margin-bottom: .35rem; }
   .cover-to b { font-family: var(--f-display); font-size: 1.5rem; color: var(--ink); font-weight: 700; }
   .cover h1 {
@@ -366,7 +371,7 @@
 
   <!-- ============ 表紙 ============ -->
   <header class="cover">
-    <div class="cover-brand">EasyWebCraft</div>
+    <div class="cover-brand">EasyWeb<span>Craft</span></div>
     <div class="cover-to"><b>株式会社 A and K</b> 御中</div>
 
     <h1>選ばれる園であり、<br><span class="accent">選ばれる職場であるために。</span></h1>
