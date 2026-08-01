@@ -323,7 +323,10 @@
   }
 
   .end { margin-top: 4.5rem; padding-top: 2rem; border-top: 2px solid var(--indigo); font-size: .95rem; color: var(--ink-faint); }
-  .end b { font-family: var(--f-display); font-size: 1.25rem; color: var(--ink); display: block; margin-bottom: .35rem; font-weight: 700; }
+  /* 表紙のロゴと同じ組み方にそろえる */
+  .end b { font-family: var(--f-display); font-size: 1.25rem; color: var(--indigo); display: block;
+           margin-bottom: .35rem; font-weight: 800; letter-spacing: .02em; }
+  .end b span { color: var(--amber-ink); }
 
   .toolbar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: flex-end; padding: .85rem 0; background: var(--paper); }
   .btn { font-family: var(--f-body); font-size: .95rem; color: var(--indigo); background: var(--paper-card); border: 1px solid var(--rule); padding: .6rem 1.1rem; cursor: pointer; border-radius: 999px; box-shadow: var(--shadow); }
@@ -980,7 +983,7 @@
         トップページを1枚だけ先にお作りし、方向性をご確認いただいてから全体を進めます。
       </p>
       <div class="end">
-        <b>EasyWebCraft</b>
+        <b>EasyWeb<span>Craft</span></b>
         初期費用0円・月額制のホームページ制作／運用サービス
       </div>
     </div>
