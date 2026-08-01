@@ -157,6 +157,17 @@
                 border-radius: 999px; padding: .5rem 1.15rem; cursor: pointer; white-space: nowrap; }
   .topbar-btn:hover { filter: brightness(1.06); }
 
+  /* フッターはヘッダーと対になる濃紺。LPのフッターと同じ並び */
+  .foot { background: var(--indigo-deep); color: rgba(255, 255, 255, .68);
+          border-radius: 12px; padding: 2.25rem 2rem; margin-top: 5rem;
+          text-align: center; font-size: .9rem; line-height: 2; }
+  .foot-logo { font-family: var(--f-display); font-weight: 800; font-size: 1.2rem;
+               letter-spacing: .02em; color: #fff; margin-bottom: .2rem; }
+  .foot-logo span { color: var(--amber); }
+  .foot-org { margin-top: .9rem; font-size: .84rem; color: rgba(255, 255, 255, .55); }
+  .foot-note { margin-top: 1.1rem; padding-top: .9rem; font-size: .82rem;
+               color: rgba(255, 255, 255, .5); border-top: 1px solid rgba(255, 255, 255, .12); }
+
   /* 表紙は写真の上に明るいオーバーレイを重ねて、写真を活かしたまま文字を読ませる。
      オーバーレイは白。クリーム色にすると、地色が白のこの資料では表紙だけ浮くうえ、
      写真の木のテーブルと重なって全体がセピア調になる。
@@ -392,6 +403,10 @@
     html { font-size: 12pt; }
     .topbar, .toc { display: none; }
     .cover { background: #fff; color: #000; border-radius: 0; padding: 0; }
+    .foot { background: #fff; color: #333; border-radius: 0; padding: 1.5rem 0 0;
+            border-top: 2px solid #000; margin-top: 2.5rem; }
+    .foot-logo, .foot-logo span { color: #000; }
+    .foot-org, .foot-note { color: #555; }
     .cover h1, .cover-to b { color: #000; }
     .cover-lead, .cover-lead strong, .cover-to, .cover-meta { color: #222; }
     .cover h1 .accent { color: #000; background: none; }
@@ -1047,6 +1062,12 @@
     </div>
   </section>
 
+  <footer class="foot">
+    <div class="foot-logo">EasyWeb<span>Craft</span></div>
+    <div>ホームページ制作・運用・保守サービス</div>
+    <div class="foot-org">運営：株式会社TAC<br>愛知県名古屋市守山区瀬古東1-1701 201</div>
+    <div class="foot-note">本資料は株式会社 A and K さま向けにお作りしたものです。</div>
+  </footer>
   </main>
 </div>
 
