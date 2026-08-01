@@ -71,10 +71,6 @@ TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 特定のお客さま向けの資料なので検索避けする（URLを知っている人は見られる） -->
 <meta name="robots" content="noindex, nofollow, noarchive">
-<!-- kids-support-sample と同じ丸ゴシック。読めない環境では端末のゴシックに落ちる -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta property="og:type" content="article">
