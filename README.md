@@ -1,6 +1,8 @@
-# かみのてグループさま ご提案（EasyWebCraft）
+# 株式会社 A and K さま ご提案（EasyWebCraft）
 
-株式会社 A and K／かみのてグループさま向けの、ホームページ制作のご提案ページ。
+株式会社 A and K さま（かみのて保育園・かみのて今渡保育園・かみのてKIDS・かみのてSMILE）向けの、
+ホームページ制作のご提案ページ。「かみのてグループ」という法人は存在しないので、宛名・法人名は
+必ず「株式会社 A and K」を使う。
 
 - <https://k-matsumoto527.github.io/kaminote-proposal/>
 
