@@ -153,9 +153,19 @@
                 border-radius: 999px; padding: .5rem 1.15rem; cursor: pointer; white-space: nowrap; }
   .topbar-btn:hover { filter: brightness(1.06); }
 
-  /* 表紙はLPのヒーローと同じ濃紺ベタ。白地に使えない黄をここでは素のまま使える */
-  .cover { background: var(--indigo-deep); color: #fff; border-bottom: none;
-           border-radius: 12px; padding: 3.5rem 2rem 3rem; margin-top: 2rem; }
+  /* 表紙はLPのヒーローと同じ作り。写真の上に紺のグラデーションを二重に重ねて
+     文字の可読性を確保する。最後の単色は画像が読めなかったときのフォールバック。
+     元写真が明るいので、LPより overlay を濃いめ（.86〜.93）にしている。 */
+  .cover {
+    background:
+      radial-gradient(80% 70% at 28% 42%, rgba(6, 20, 46, .55) 0%, rgba(6, 20, 46, .25) 55%, transparent 82%),
+      radial-gradient(60% 50% at 92% 100%, rgba(255, 198, 26, .12) 0%, transparent 60%),
+      linear-gradient(165deg, rgba(6, 22, 50, .93) 0%, rgba(9, 34, 74, .86) 55%, rgba(11, 45, 98, .90) 100%),
+      url('hero.jpg') center / cover no-repeat,
+      var(--indigo-deep);
+    color: #fff; border-bottom: none;
+    border-radius: 12px; padding: 3.5rem 2rem 3rem; margin-top: 2rem;
+  }
   .cover-to { color: rgba(255, 255, 255, .78); }
   .cover-to b { color: #fff; }
   .cover h1 { color: #fff; }

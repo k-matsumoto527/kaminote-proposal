@@ -9,6 +9,15 @@
 資料の目的は**サイト構成（家づくりでいう間取り図）を2案から選んでもらうこと**。
 デザインの合意でも受注のための提案でもないので、売り込みの要素は置かない。
 
+## 素材
+
+`hero.jpg` は表紙の背景。Unsplash の無料ライセンス（Unsplash License）の写真で、
+撮影は Susan Holt Simpson（@shs521）。出典は
+<https://unsplash.com/photos/brown-wooden-toy-blocks-GQ327RPuxhI>。
+帰属表示は不要だが、差し替えるときのために記録しておく。**Unsplash+ の有料写真は使わないこと。**
+
+`index.html` からは相対パスで参照しているので、原本（`~/ewc-docs/`）を単体で開くと表紙の写真だけ出ない。
+
 ## 中身の直し方
 
 `index.html` は**生成物なので直接編集しない**。原本は `~/ewc-docs/proposal-kaminote.html`。
