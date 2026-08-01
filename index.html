@@ -157,18 +157,19 @@
                 border-radius: 999px; padding: .5rem 1.15rem; cursor: pointer; white-space: nowrap; }
   .topbar-btn:hover { filter: brightness(1.06); }
 
-  /* 表紙は kids-support-sample のヒーローと同じ作り。
-     写真を紺で沈めるのではなく、クリーム色の明るいオーバーレイを重ねて写真を活かし、
-     文字は濃い墨色＋薄い影で浮かせる。最後の単色は画像が読めなかったときのフォールバック。 */
+  /* 表紙は写真の上に明るいオーバーレイを重ねて、写真を活かしたまま文字を読ませる。
+     オーバーレイは白。クリーム色にすると、地色が白のこの資料では表紙だけ浮くうえ、
+     写真の木のテーブルと重なって全体がセピア調になる。
+     最後の単色は画像が読めなかったときのフォールバック。 */
   .cover {
     background:
-      linear-gradient(rgba(253, 250, 242, .90) 0%, rgba(253, 250, 242, .84) 50%, rgba(253, 250, 242, .93) 100%),
+      linear-gradient(rgba(255, 255, 255, .90) 0%, rgba(255, 255, 255, .84) 50%, rgba(255, 255, 255, .93) 100%),
       url('hero.jpg') center / cover no-repeat,
-      #fdfaf2;
+      var(--paper);
     color: var(--ink); border-bottom: none;
     border-radius: 12px; padding: 3.5rem 2rem 3rem; margin-top: 2rem;
   }
-  .cover > * { text-shadow: 0 1px 10px rgba(253, 250, 242, .85); }
+  .cover > * { text-shadow: 0 1px 10px rgba(255, 255, 255, .85); }
   .cover-to { color: var(--ink-soft); }
   .cover-to b { color: var(--ink); }
   .cover h1 { color: var(--ink); }
