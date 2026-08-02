@@ -342,9 +342,6 @@
   /* 画面の上に置く見出しは、下の余白だけ空ける */
   .caption.frame-cap { margin: 0 0 .5rem; }
   .caption b { color: var(--ink); font-weight: 700; }
-  .pages { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
-  .pages span { font-size: .88rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 999px; padding: .28em .8em; color: var(--ink-soft); }
-  .pages span.top { background: var(--indigo-bg); color: var(--indigo); font-weight: 700; }
   .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; }
   /* flex だとテキストが無名アイテムになり min-width を指定できず折り返せない。
      grid にして2列目を minmax(0,1fr) にすると狭い画面でも折り返る。 */
@@ -746,12 +743,6 @@
               </div>
               <div class="wf-foot"><i></i><i></i><i></i></div>
             </div>
-          </div>
-          <div class="pages">
-            <span class="top">トップ</span><span>支援方針</span><span>こんなお子さまへ</span>
-            <span>支援の内容</span><span>多言語での支援</span><span>施設紹介／事業所のご案内</span>
-            <span>一日の流れ</span><span>ご利用案内</span><span>会社案内</span><span>採用・スタッフ紹介</span>
-            <span>活動の記録</span><span>見学・ご相談</span>
           </div>
         </div>
       </div>
