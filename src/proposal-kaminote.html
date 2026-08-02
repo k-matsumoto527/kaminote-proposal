@@ -316,6 +316,8 @@
   .wf-foot i { display: block; height: .4rem; flex: 1; background: var(--wf-fill); }
 
   .caption { font-size: .92rem; color: var(--ink-faint); margin-top: .6rem; }
+  /* 画面の上に置く見出しは、下の余白だけ空ける */
+  .caption.frame-cap { margin: 0 0 .5rem; }
   .caption b { color: var(--ink); font-weight: 700; }
   .pages { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
   .pages span { font-size: .88rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 999px; padding: .28em .8em; color: var(--ink-soft); }
@@ -596,6 +598,7 @@
 
       <div class="frames two">
         <div>
+          <p class="caption frame-cap"><b>保育園サイト</b></p>
           <div class="browser">
             <div class="browser-bar">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -656,10 +659,10 @@
               <div class="wf-foot"><i></i><i></i><i></i></div>
             </div>
           </div>
-          <p class="caption"><b>保育園サイト</b></p>
         </div>
 
         <div>
+          <p class="caption frame-cap"><b>放課後等デイサービスサイト</b><br>こちらはヒアリング前のたたき台です。保育園と同じように、あらためて伺って詰めます。</p>
           <div class="browser">
             <div class="browser-bar">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -721,7 +724,6 @@
               <div class="wf-foot"><i></i><i></i><i></i></div>
             </div>
           </div>
-          <p class="caption"><b>放課後等デイサービスサイト</b><br>こちらはヒアリング前のたたき台です。保育園と同じように、あらためて伺って詰めます。</p>
           <div class="pages">
             <span class="top">トップ</span><span>支援方針</span><span>こんなお子さまへ</span>
             <span>支援の内容</span><span>多言語での支援</span><span>施設紹介／事業所のご案内</span>
