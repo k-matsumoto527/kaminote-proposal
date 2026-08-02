@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 特定のお客さま向けの資料なので検索避けする（URLを知っている人は見られる） -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>株式会社 A and K デザイン案のご確認｜EasyWebCraft</title>
+<meta name="description" content="株式会社 A and K さま向けのデザイン案のご確認です。2サイト案にそって、保育園サイトと放課後等デイサイトのトップページを1枚ずつご覧いただけます。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="EasyWebCraft">
+<meta property="og:title" content="株式会社 A and K デザイン案のご確認｜EasyWebCraft">
+<meta property="og:description" content="株式会社 A and K さま向けのデザイン案のご確認です。2サイト案にそって、保育園サイトと放課後等デイサイトのトップページを1枚ずつご覧いただけます。">
+<meta property="og:url" content="https://k-matsumoto527.github.io/kaminote-proposal/design.html">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+  ul, ol { padding: 0; }
+  body { min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  img, picture, video, canvas, svg { display: block; max-width: 100%; }
+  input, button, textarea, select { font: inherit; }
+  p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+</style>
+</head>
+<body>
+<style>
+  /* ---------- トークン ---------- */
+  :root {
+    /* EasyWebCraft のLPと同じ配色（白地・濃紺・黄アクセント） */
+    --paper:      #ffffff;
+    --paper-card: #ffffff;
+    --paper-sunk: #f7fafd;
+    --ink:        #1a2433;
+    --ink-soft:   #35435a;
+    --ink-faint:  #5b6b7e;
+    --rule:       #dde6f0;
+    --indigo:     #0d3a7d;   /* LP --navy */
+    --indigo-bg:  #eef4fb;   /* LP --wash */
+    --amber:      #ffc61a;   /* LP --accent（面・点で使う） */
+    --amber-ink:  #7a5300;   /* 黄系を文字に使うとき（白地でのコントラスト確保） */
+    --amber-bg:   #fff8e1;
+    --mk:         #fff23c;   /* LP --mk（マーカー） */
+    --sky:        #3f8ecf;   /* 面・罫線用（LPそのまま） */
+    --sky-ink:    #2a6ca8;   /* 文字用に濃くしたもの（白地で5.5:1） */
+    --clay:       #d2564a;
+    --clay-bg:    #fdeeeb;
+    --sage:       #0d3a7d;
+    --sage-bg:    #eef4fb;
+    --shadow:     0 10px 30px rgba(13, 58, 125, .08);
+
+    --indigo-deep: #081c3f;   /* LP --navy-deep */
+    --accent-ink: #3a2e00;   /* LP 黄ボタンの文字色 */
+
+    --col: 37rem;
+    --rail: 5rem;
+
+    /* 間取り図（ワイヤーフレーム）の部品色。白地に合わせて寒色寄りのグレーに */
+    --wf-line: #cbd8e6; --wf-fill: #e6eef7; --wf-photo: #d5e1ee; --wf-head: #8fa5c0;
+
+    /* LPと同じくゴシック1本。Noto Sans JP は端末にあれば使われる
+       （Artifactは外部フォントを読み込めないためWebフォント指定はしない） */
+    --f-display: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                 Meiryo, "Yu Gothic UI", "Yu Gothic", sans-serif;
+    --f-body: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+              Meiryo, "Yu Gothic UI", "Yu Gothic", sans-serif;
+    --f-num: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0f1520; --paper-card: #161e2c; --paper-sunk: #121a26;
+      --ink: #eef3fa; --ink-soft: #c2cddd; --ink-faint: #93a2b6; --rule: #2a3547;
+      --indigo: #8fb6ee; --indigo-bg: #17233a;
+      --amber: #ffc61a; --amber-ink: #ffd75e; --amber-bg: #2b2415; --mk: #6b6410;
+      --sky: #6aa9de; --sky-ink: #85b8e6; --clay: #e8897d; --clay-bg: #2c1d1b;
+      --sage: #8fb6ee; --sage-bg: #17233a;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --wf-line: #3a4557; --wf-fill: #232d3d; --wf-photo: #2c3849; --wf-head: #61748c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --wf-line: #3a4557; --wf-fill: #232d3d; --wf-photo: #2c3849; --wf-head: #61748c;
+    --paper: #0f1520; --paper-card: #161e2c; --paper-sunk: #121a26;
+    --ink: #eef3fa; --ink-soft: #c2cddd; --ink-faint: #93a2b6; --rule: #2a3547;
+    --indigo: #8fb6ee; --indigo-bg: #17233a;
+    --amber: #ffc61a; --amber-ink: #ffd75e; --amber-bg: #2b2415; --mk: #6b6410;
+    --sky: #6aa9de; --sky-ink: #85b8e6; --clay: #e8897d; --clay-bg: #2c1d1b;
+    --sage: #8fb6ee; --sage-bg: #17233a;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+  :root[data-theme="light"] {
+    --wf-line: #cbd8e6; --wf-fill: #e6eef7; --wf-photo: #d5e1ee; --wf-head: #8fa5c0;
+    --paper: #ffffff; --paper-card: #ffffff; --paper-sunk: #f7fafd;
+    --ink: #1a2433; --ink-soft: #35435a; --ink-faint: #5b6b7e; --rule: #dde6f0;
+    --indigo: #0d3a7d; --indigo-bg: #eef4fb;
+    --amber: #ffc61a; --amber-ink: #7a5300; --amber-bg: #fff8e1; --mk: #fff23c;
+    --sky: #3f8ecf; --sky-ink: #2a6ca8; --clay: #d2564a; --clay-bg: #fdeeeb;
+    --sage: #0d3a7d; --sage-bg: #eef4fb;
+    --shadow: 0 10px 30px rgba(13, 58, 125, .08);
+  }
+
+  /* ---------- 土台 ---------- */
+  /* 60代の読み手を基準に、全体の基準サイズを18pxに引き上げる。
+     rem は html を基準にするため、ここで指定して各部品を連動させる。 */
+  html { font-size: 18px; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--f-body); font-size: 1rem; line-height: 1.95;
+    letter-spacing: .02em;
+    -webkit-font-smoothing: antialiased; text-size-adjust: 100%;
+  }
+  .doc { max-width: calc(var(--col) + var(--rail) + 3rem); margin: 0 auto; padding: 0 1.5rem 6rem; }
+  p, li { color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 700; }
+  a { color: var(--indigo); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 2px; }
+  em { font-style: normal; background: linear-gradient(transparent 60%, var(--mk) 60%); }
+  .num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+
+  /* ---------- 表紙 ---------- */
+  .cover { padding: 3.25rem 0 3rem; border-bottom: 1px solid var(--rule); }
+  /* LPのロゴ（EasyWeb＋Craft、Craftだけアクセント色・太字）に合わせる。
+     LPは濃紺地に白＋#ffc61a だが、この資料は白地なので反転させ、
+     Craft には白地でも読める黄系（--amber-ink）を使う。 */
+  .cover-brand { font-family: var(--f-display); font-size: 1.2rem; font-weight: 800;
+                 letter-spacing: .02em; color: var(--indigo); margin-bottom: 1.75rem; }
+  .cover-brand span { color: var(--amber-ink); }
+  .cover-to { font-size: 1.02rem; color: var(--ink-soft); margin-bottom: .35rem; }
+  .cover-to b { font-family: var(--f-display); font-size: 1.5rem; color: var(--ink); font-weight: 700; }
+  .cover h1 {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: clamp(1.85rem, 6vw, 2.9rem); line-height: 1.42;
+    letter-spacing: -.01em; text-wrap: balance; margin: 1.75rem 0 1.2rem;
+  }
+  .cover h1 .accent { color: var(--indigo); }
+  .cover-lead { font-size: 1.1rem; max-width: 42rem; }
+  .cover-meta { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 2.25rem; font-size: .92rem; color: var(--ink-faint); font-family: var(--f-num); }
+
+
+  /* ---------- LPに合わせた外枠（ヘッダー・表紙・帯・フッター） ---------- */
+  /* easyweb-lp と同じ「濃紺の固定ヘッダー → 濃紺のヒーロー → 白と薄青の交互」の
+     組み立てを持ち込む。本文の左揃えと目次はそのままにして読みやすさは変えない。 */
+  .topbar { position: sticky; top: 0; z-index: 60; background: rgba(8, 28, 63, .93);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, .08); }
+  .topbar-in { max-width: 86rem; margin: 0 auto; padding: .65rem 1.5rem;
+               display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .topbar-brand { display: flex; align-items: baseline; gap: .9rem; min-width: 0; }
+  .topbar-logo { font-family: var(--f-display); font-weight: 800; font-size: 1.05rem;
+                 letter-spacing: .02em; color: #fff; white-space: nowrap; }
+  /* 説明文は幅が足りない画面では隠す（ロゴとボタンを優先） */
+  .topbar-tag { font-size: .76rem; color: rgba(255, 255, 255, .6); white-space: nowrap; }
+  @media (max-width: 56rem) { .topbar-tag { display: none; } }
+  .topbar-logo span { color: var(--amber); }
+  .topbar-btn { font-family: var(--f-body); font-weight: 800; font-size: .85rem;
+                background: var(--amber); color: var(--accent-ink); border: none;
+                border-radius: 999px; padding: .5rem 1.15rem; cursor: pointer; white-space: nowrap; }
+  .topbar-btn:hover { filter: brightness(1.06); }
+
+  /* フッターはヘッダーと対になる濃紺。LPのフッターと同じ並び */
+  .foot { background: var(--indigo-deep); color: rgba(255, 255, 255, .68);
+          border-radius: 12px; padding: 2.25rem 2rem; margin-top: 5rem;
+          text-align: center; font-size: .9rem; line-height: 2; }
+  .foot-logo { font-family: var(--f-display); font-weight: 800; font-size: 1.2rem;
+               letter-spacing: .02em; color: #fff; margin-bottom: .2rem; }
+  .foot-logo span { color: var(--amber); }
+  .foot-org { margin-top: .9rem; font-size: .84rem; color: rgba(255, 255, 255, .55); }
+  .foot-note { margin-top: 1.1rem; padding-top: .9rem; font-size: .82rem;
+               color: rgba(255, 255, 255, .5); border-top: 1px solid rgba(255, 255, 255, .12); }
+
+  /* 表紙は写真の上に白のオーバーレイを重ねて、写真を活かしたまま文字を読ませる。
+     写真は右側（工作の手元）が見どころで、文字は左に寄っているので、
+     左を白く伏せて右へ向かって薄くする。全体を一律に薄くすると本文が読めなくなる。
+     クリーム色のオーバーレイは、地色が白のこの資料では表紙だけ浮くので使わない。
+     最後の単色は画像が読めなかったときのフォールバック。 */
+  .cover {
+    background:
+      linear-gradient(100deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .93) 40%,
+                              rgba(255, 255, 255, .58) 70%, rgba(255, 255, 255, .32) 100%),
+      url('hero.jpg') center / cover no-repeat,
+      var(--paper);
+    color: var(--ink); border-bottom: none;
+    border-radius: 12px; padding: 3.5rem 2rem 3rem; margin-top: 2rem;
+    min-height: 30rem; display: flex; flex-direction: column; justify-content: center;
+  }
+  /* 狭い画面では文字が横幅いっぱいに広がり、右側の写真と重なってしまう。
+     そこでは全体を一律に伏せる（背も詰める）。 */
+  @media (max-width: 54rem) {
+    .cover {
+      background:
+        linear-gradient(rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .88) 50%, rgba(255, 255, 255, .94) 100%),
+        url('hero.jpg') center / cover no-repeat,
+        var(--paper);
+      min-height: 0; display: block;
+    }
+  }
+  .cover > * { text-shadow: 0 1px 10px rgba(255, 255, 255, .85); }
+  .cover-to { color: var(--ink-soft); }
+  .cover-to b { color: var(--ink); }
+  .cover h1 { color: var(--ink); }
+  /* アクセントは黄色のマーカー。LPの --mk と、参考サイトのマーカー表現の両方に合う */
+  .cover h1 .accent { color: var(--indigo);
+                      background: linear-gradient(transparent 64%, var(--mk) 64%); }
+  .cover-lead { color: var(--ink-soft); }
+  .cover-lead strong { color: var(--ink); }
+  .cover-meta { color: var(--ink-faint); }
+
+  /* 節の英字ラベル（LPの PROBLEM / ABOUT にあたるもの） */
+  .sec-label { font-family: var(--f-num); font-size: .76rem; letter-spacing: .18em;
+               text-transform: uppercase; color: var(--sky-ink); margin-bottom: .3rem; }
+
+  /* ---------- 節 ---------- */
+  .sec { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 0 1.6rem; padding-top: 4.5rem; }
+  .sec-no { font-family: var(--f-num); font-size: .95rem; color: var(--ink-faint); padding-top: .6rem; border-top: 3px solid var(--indigo); align-self: start; letter-spacing: .06em; }
+  .sec-body { min-width: 0; padding-top: .5rem; }
+  .sec h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.45rem, 4.6vw, 1.9rem); line-height: 1.5; text-wrap: balance; margin-bottom: .9rem; letter-spacing: -.01em; }
+  .sec h3 { font-size: 1.14rem; font-weight: 700; color: var(--ink); margin: 2.1rem 0 .6rem; letter-spacing: .02em; }
+  .sec > .sec-body > p + p { margin-top: .9rem; }
+  .lede { font-size: 1.12rem; color: var(--ink); }
+
+  /* ---------- 部品 ---------- */
+  ul.marks { list-style: none; margin-top: 1.1rem; display: flex; flex-direction: column; gap: .7rem; }
+  ul.marks li { position: relative; padding-left: 1.5rem; font-size: 1.03rem; }
+  ul.marks li strong.pt { display: block; margin-bottom: .2rem; }
+  ul.marks li::before { content: ""; position: absolute; left: 0; top: .72em; width: .45rem; height: .45rem; background: var(--amber); border-radius: 50%; }
+
+  .map { background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; padding: 1.1rem 1.25rem; margin-top: 1rem; overflow-x: auto; }
+  /* 罫線のツリー（pre）は折り返せず、狭い画面で横スクロールになるため入れ子リストにした */
+  .pagetree { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+  .pagetree li { padding-left: .9rem; border-left: 2px solid var(--rule); }
+  .pagetree b { color: var(--ink); font-weight: 700; }
+  .pagetree span { display: block; font-size: .9rem; color: var(--ink-faint); margin-top: .1rem; }
+  .pagetree i { font-style: normal; font-family: var(--f-num); font-size: .76rem; color: var(--indigo);
+                background: var(--indigo-bg); border-radius: 999px; padding: .15em .7em;
+                margin-left: .5rem; white-space: nowrap; }
+  .map-cap { font-size: .9rem; color: var(--ink-faint); margin-bottom: .6rem; letter-spacing: .04em; }
+
+  .scroll { overflow-x: auto; margin-top: 1.25rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 1rem; min-width: 30rem; }
+  th, td { text-align: left; padding: .8rem .85rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th { font-size: .86rem; letter-spacing: .08em; color: var(--ink-faint); font-weight: 600; border-bottom-width: 2px; white-space: nowrap; }
+  td.n, th.n { text-align: right; font-family: var(--f-num); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: none; }
+  .t-note { font-size: .95rem; color: var(--ink-faint); margin-top: .6rem; }
+
+  /* 2案の比較表。列幅を自動にすると中身の量で幅が決まってしまい、
+     3サイト案が2サイト案の倍近い幅になって左右が不揃いに見える。
+     項目名の列を固定し、2案の列を必ず同じ幅にする。 */
+  .cmp { table-layout: fixed; }
+  .cmp th:first-child, .cmp td:first-child { width: 11.5rem; }
+  .cmp th + th, .cmp td + td { width: calc((100% - 11.5rem) / 2); }
+  .cmp th + th { border-left: 1px solid var(--rule); }
+  .cmp td + td { border-left: 1px solid var(--rule); }
+
+  /* スマホでは横スクロールさせず、項目ごとに縦へ積み替える。
+     見出し行が消えるので、どちらの案かは data-plan から出す。 */
+  @media (max-width: 40rem) {
+    .cmp { min-width: 0; table-layout: auto; }
+    .cmp, .cmp tbody, .cmp tr, .cmp td { display: block; width: auto; }
+    /* 上の width:auto より詳細度が高い列幅指定を、同じ形で打ち消す */
+    .cmp th:first-child, .cmp td:first-child,
+    .cmp th + th, .cmp td + td { width: auto; }
+    .cmp thead { display: none; }
+    .cmp tr { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+    .cmp tbody tr:last-child { border-bottom: none; }
+    .cmp td { padding: 0; border: none; }
+    .cmp td:first-child { font-size: 1.03rem; color: var(--ink); font-weight: 700; margin-bottom: .6rem; }
+    .cmp td + td { border-left: 2px solid var(--rule); padding: .1rem 0 .1rem .8rem; margin-top: .5rem; }
+    .cmp td[data-plan]::before {
+      content: attr(data-plan); display: block; font-family: var(--f-num);
+      font-size: .8rem; letter-spacing: .06em; color: var(--indigo); margin-bottom: .15rem;
+    }
+  }
+
+  .site-tag { font-family: var(--f-num); font-size: .84rem; letter-spacing: .12em; color: var(--indigo); }
+
+  .price-box { background: var(--paper-card); border: 2px solid var(--indigo); padding: 1.6rem; margin-top: 1.5rem; border-radius: 8px; box-shadow: var(--shadow); }
+  .price { font-family: var(--f-num); font-variant-numeric: tabular-nums; font-size: clamp(2rem, 9vw, 2.7rem); color: var(--ink); line-height: 1.15; }
+  .price small { font-size: .92rem; color: var(--ink-faint); font-family: var(--f-body); }
+  .price-sub { font-size: .95rem; color: var(--ink-faint); margin-top: .25rem; }
+
+  .callout { background: var(--indigo-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 1.4rem 1.5rem; margin-top: 1.5rem; }
+  .callout h4 { font-family: var(--f-display); font-size: 1.18rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
+  .callout p { font-size: 1.02rem; }
+  .callout p + p { margin-top: .6rem; }
+  .callout.warn { background: var(--amber-bg); }
+
+
+  /* ---------- 間取り図: サイト構成 ---------- */
+  .hub { background: var(--indigo); color: #fff; text-align: center; padding: 1rem; border-radius: 6px; font-family: var(--f-display); font-size: 1.25rem; font-weight: 700; letter-spacing: .04em; box-shadow: var(--shadow); margin-top: 1.5rem; }
+  .hub-sub { display: block; font-family: var(--f-body); font-size: .85rem; font-weight: 400; opacity: .85; letter-spacing: .02em; margin-top: .2rem; }
+  .connector { height: 1.6rem; border-left: 2px solid var(--rule); width: 0; margin: 0 auto; }
+  /* 1fr ではなく minmax(0, 1fr)。1fr の下限は min-content なので、中身が狭い画面より
+     広いと列が押し広げられ、ページごと横スクロールしてしまう。 */
+  .sites { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+  .sites > * { min-width: 0; }
+  @media (min-width: 46rem) {
+    .sites { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .sites.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .sitecard { background: var(--paper-card); border: 1px solid var(--rule); border-top: 5px solid var(--indigo); border-radius: 6px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .35rem; box-shadow: var(--shadow); }
+  .sitecard.s-hoiku { border-top-color: var(--indigo); }
+  .sitecard.s-dei   { border-top-color: var(--amber); }
+  .sitecard .n { font-family: var(--f-num); font-size: .8rem; color: var(--ink-faint); letter-spacing: .1em; }
+  .sitecard h3 { font-family: var(--f-display); font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.4; margin: 0; }
+  .sitecard .who { font-size: .88rem; color: var(--ink-faint); }
+  .sitecard .goal { font-size: .92rem; margin-top: .4rem; padding-top: .5rem; border-top: 1px dashed var(--rule); }
+
+  /* ---------- 間取り図: 画面の枠 ---------- */
+  .frames { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); margin-top: 1.5rem; }
+  .frames > * { min-width: 0; }
+  @media (min-width: 54rem) { .frames.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  .browser { border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--paper-card); box-shadow: var(--shadow); }
+  .browser-bar { display: flex; align-items: center; gap: .4rem; padding: .5rem .7rem; background: var(--paper-sunk); border-bottom: 1px solid var(--rule); }
+  .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--wf-line); }
+  .url { flex: 1; margin-left: .5rem; font-family: var(--f-num); font-size: .72rem; color: var(--ink-faint); background: var(--paper-card); border: 1px solid var(--rule); padding: .15rem .5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .screen { padding: .8rem; display: flex; flex-direction: column; gap: .55rem; }
+
+  .wf-nav { display: flex; align-items: center; gap: .4rem; padding-bottom: .55rem; border-bottom: 1px solid var(--wf-line); }
+  .wf-logo { width: 4.5rem; height: .85rem; background: var(--wf-head); }
+  .wf-navitems { margin-left: auto; display: flex; gap: .3rem; }
+  .wf-navitems i { display: block; width: 2.2rem; height: .5rem; background: var(--wf-fill); }
+  .wf-navitems i.cta { background: var(--indigo); width: 2.8rem; }
+  .wf-block { border: 1px dashed var(--wf-line); padding: .55rem; display: flex; flex-direction: column; gap: .4rem; position: relative; }
+  .wf-label { font-family: var(--f-num); font-size: .68rem; letter-spacing: .06em; color: var(--ink-faint); }
+  .wf-photo { background: var(--wf-photo); display: flex; align-items: center; justify-content: center; font-size: .7rem; color: var(--ink-faint); font-family: var(--f-num); text-align: center; }
+  .wf-h { height: .95rem; background: var(--wf-head); }
+  .wf-h.w70 { width: 70%; } .wf-h.w55 { width: 55%; } .wf-h.w85 { width: 85%; }
+  .wf-t { height: .38rem; background: var(--wf-fill); }
+  .wf-t.w90 { width: 90%; } .wf-t.w75 { width: 75%; } .wf-t.w60 { width: 60%; } .wf-t.w45 { width: 45%; }
+  .wf-btn { height: 1.15rem; width: 7rem; background: var(--indigo); }
+  .wf-btn.ghost { background: none; border: 1.5px solid var(--indigo); }
+  .wf-row { display: grid; gap: .4rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wf-row.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wf-mini { border: 1px solid var(--wf-line); padding: .35rem; display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+  .wf-mini .wf-photo { height: 2.2rem; }
+  .wf-foot { border-top: 1px solid var(--wf-line); padding-top: .5rem; display: flex; gap: .4rem; }
+  .wf-foot i { display: block; height: .4rem; flex: 1; background: var(--wf-fill); }
+
+  .caption { font-size: .92rem; color: var(--ink-faint); margin-top: .6rem; }
+  /* 画面の上に置く見出しは、下の余白だけ空ける */
+  .caption.frame-cap { margin: 0 0 .5rem; }
+  .caption b { color: var(--ink); font-weight: 700; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--paper-sunk); border: 1px solid var(--rule); border-radius: 6px; }
+  /* flex だとテキストが無名アイテムになり min-width を指定できず折り返せない。
+     grid にして2列目を minmax(0,1fr) にすると狭い画面でも折り返る。 */
+  .legend div { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
+                gap: .5rem; font-size: .9rem; color: var(--ink-soft); min-width: 0; }
+  .legend .sw { width: 2.2rem; height: .8rem; flex: none; }
+  .legend .sw.h { background: var(--wf-head); }
+  .legend .sw.t { background: var(--wf-fill); }
+  .legend .sw.p { background: var(--wf-photo); }
+  .legend .sw.b { background: var(--indigo); }
+
+  /* ---------- PC向けレイアウト（目次を左に固定） ---------- */
+  .toc { display: none; }
+  /* 料金2案は既定では縦積み。広い画面で横並びにする（下の 78rem 指定） */
+  .price-grid { display: flex; flex-direction: column; }
+
+  @media (min-width: 64rem) {
+    .doc {
+      display: grid; grid-template-columns: 14rem minmax(0, 1fr);
+      gap: 0 3rem; align-items: start; max-width: 86rem;
+    }
+    .toc {
+      display: block; position: sticky; top: 4.5rem;
+      padding-top: 4rem; max-height: calc(100vh - 6rem); overflow-y: auto;
+    }
+  }
+  .toc-head {
+    font-family: var(--f-num); font-size: .82rem; letter-spacing: .18em;
+    color: var(--indigo); text-transform: uppercase;
+    padding-bottom: .6rem; border-bottom: 2px solid var(--indigo); margin-bottom: .5rem;
+  }
+  .toc nav { display: flex; flex-direction: column; }
+  .toc nav a {
+    display: flex; gap: .6rem; align-items: baseline;
+    padding: .42rem .2rem .42rem .55rem; font-size: .92rem; line-height: 1.55;
+    color: var(--ink-soft); text-decoration: none;
+    border-left: 3px solid transparent;
+  }
+  .toc nav a:hover { color: var(--indigo); background: var(--indigo-bg); }
+  .toc nav a.on { color: var(--indigo); border-left-color: var(--indigo); font-weight: 700; }
+  .toc .t-no { font-family: var(--f-num); font-size: .78rem; color: var(--ink-faint); flex: none; }
+  .toc nav a.on .t-no { color: var(--indigo); }
+  .toc .t-ttl { min-width: 0; }
+
+  .sec { scroll-margin-top: 5.5rem; }
+
+  /* ---------- 広い画面（1250px〜）: 図・表・カードを2列に広げる ---------- */
+  @media (min-width: 78rem) {
+    /* 読み物は目が追える幅で止める。広げるのは図・表・カードだけ。 */
+    .sec-body > p, .sec-body > .lede,
+    .callout > p, .callout > ul.marks,
+    .sec-body > ul.marks,
+    .t-note { max-width: 46rem; }
+
+    /* 料金の2案を左右に並べて比較しやすく */
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: start; }
+    .price-grid .price-box { margin-top: 1.5rem; }
+  }
+
+  @media (max-width: 30rem) {
+    html { font-size: 17px; }
+  }
+  @media (max-width: 34rem) {
+    /* 1fr の下限は min-content。帯の内側の余白と合わさると中身がはみ出すため minmax(0,1fr) */
+    .sec { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+    .sec > * { min-width: 0; }
+    .sec-no { border-top: none; padding-top: 0; }
+  }
+
+  @media print {
+    :root { --paper: #fff; --paper-card: #fff; --paper-sunk: #f6f6f6;
+            --ink: #000; --ink-soft: #222; --ink-faint: #555; --rule: #bbb; }
+    html { font-size: 12pt; }
+    .topbar, .toc { display: none; }
+    .cover { background: #fff; color: #000; border-radius: 0; padding: 0; }
+    .foot { background: #fff; color: #333; border-radius: 0; padding: 1.5rem 0 0;
+            border-top: 2px solid #000; margin-top: 2.5rem; }
+    .foot-logo, .foot-logo span { color: #000; }
+    .foot-org, .foot-note { color: #555; }
+    .cover h1, .cover-to b { color: #000; }
+    .cover-lead, .cover-lead strong, .cover-to, .cover-meta { color: #222; }
+    .cover h1 .accent { color: #000; background: none; }
+    .doc { display: block; max-width: none; padding: 0; }
+    .price-grid { display: block; }
+    .sec, .price-box, .callout, .map,
+    .browser, .sitecard, .legend { break-inside: avoid; page-break-inside: avoid; }
+    .cover { padding-top: 1rem; }
+    a { text-decoration: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  /* ===== 2枚目（デザイン案）だけで使う部品 ===== */
+
+  /* デザイン案のプレビュー。画像を押すと実物が開く */
+  .mock { display: grid; gap: 1.1rem; margin-top: 1.4rem; }
+  .mock + .mock { margin-top: 2.6rem; }
+  .mock-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem .9rem; }
+  .mock-head h3 { font-family: var(--f-display); font-size: 1.15rem; font-weight: 700; }
+  .mock-tone { font-size: .8rem; font-weight: 700; padding: .18rem .6rem; border-radius: 999px;
+               background: var(--indigo-bg); color: var(--indigo); white-space: nowrap; }
+  .shot { display: block; border: 1px solid var(--rule); border-radius: .7rem; overflow: hidden;
+          box-shadow: var(--shadow); }
+  .shot img { width: 100%; height: auto; }
+  .mock-note { color: var(--ink-soft); font-size: .95rem; }
+  .open-btn { display: inline-flex; align-items: center; gap: .5rem; align-self: start;
+              background: var(--indigo); color: #fff; text-decoration: none; font-weight: 800;
+              font-size: .95rem; padding: .8rem 1.4rem; border-radius: 999px; }
+  .open-btn::after { content: "↗"; }
+  .open-url { font-family: var(--f-num); font-size: .8rem; color: var(--ink-faint);
+              word-break: break-all; }
+
+  /* ご確認いただきたいこと。番号つきの箱 */
+  .asks { display: grid; gap: .9rem; margin-top: 1.2rem; counter-reset: ask; }
+  .ask { border: 1px solid var(--rule); border-radius: .7rem; padding: 1.05rem 1.2rem 1.15rem;
+         background: var(--paper-card); display: grid;
+         grid-template-columns: auto minmax(0, 1fr); gap: .3rem .9rem; }
+  .ask::before { counter-increment: ask; content: counter(ask);
+                 font-family: var(--f-num); font-size: .85rem; font-weight: 700;
+                 color: var(--indigo); background: var(--indigo-bg);
+                 width: 1.7rem; height: 1.7rem; border-radius: 50%;
+                 display: grid; place-items: center; grid-row: span 2; }
+  .ask h4 { font-family: var(--f-display); font-size: 1rem; font-weight: 700; }
+  .ask p { color: var(--ink-soft); font-size: .95rem; }
+  .ask .rec { display: block; margin-top: .5rem; padding: .55rem .8rem; border-radius: .5rem;
+              background: var(--amber-bg); color: var(--amber-ink); font-size: .9rem; font-weight: 700; }
+
+  /* これからの進め方 */
+  .steps { display: grid; gap: .7rem; margin-top: 1.2rem; counter-reset: st; }
+  .step { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem;
+          align-items: start; padding: .75rem 0; border-top: 1px solid var(--rule); }
+  .step:first-child { border-top: 0; }
+  .step::before { counter-increment: st; content: "STEP " counter(st);
+                  font-family: var(--f-num); font-size: .72rem; letter-spacing: .06em;
+                  color: var(--ink-faint); white-space: nowrap; padding-top: .25rem; }
+  .step b { font-family: var(--f-display); }
+  .step span { display: block; color: var(--ink-soft); font-size: .93rem; }
+  .step.now b::after { content: "いまここ"; margin-left: .6rem; font-family: var(--f-body);
+                       font-size: .72rem; font-weight: 800; color: var(--amber-ink);
+                       background: var(--amber-bg); padding: .1rem .5rem; border-radius: 999px; }
+
+  @media (max-width: 640px) {
+    .ask { grid-template-columns: minmax(0, 1fr); }
+    .ask::before { grid-row: auto; }
+    .step { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  }
+</style>
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="topbar-brand">
+      <div class="topbar-logo">EasyWeb<span>Craft</span></div>
+      <div class="topbar-tag">初期費用0円・月額制のホームページ制作／運用サービス</div>
+    </div>
+    <button type="button" class="topbar-btn" id="print-btn">印刷 / PDF保存</button>
+  </div>
+</div>
+
+<div class="doc">
+
+  <aside class="toc">
+    <div class="toc-head">目次</div>
+    <nav id="toc-nav">
+        <a href="#s00"><span class="t-no">00</span><span class="t-ttl">はじめに</span></a>
+        <a href="#s01"><span class="t-no">01</span><span class="t-ttl">デザイン案</span></a>
+        <a href="#s02"><span class="t-no">02</span><span class="t-ttl">いま入っている情報</span></a>
+        <a href="#s03"><span class="t-no">03</span><span class="t-ttl">ご確認いただきたいこと</span></a>
+        <a href="#s04"><span class="t-no">04</span><span class="t-ttl">これからの進め方</span></a>
+    </nav>
+  </aside>
+
+  <main>
+  <!-- ============ 表紙 ============ -->
+  <header class="cover">
+    <div class="cover-to"><b>株式会社 A and K</b> 御中</div>
+
+    <h1>間取りが決まったので、<br><span class="accent">内装をお見せします。</span></h1>
+
+    <p class="cover-lead">
+      前回お決めいただいた<strong>2サイト案</strong>にそって、
+      保育園サイトと放課後等デイサイトの<strong>トップページ</strong>を1枚ずつお作りしました。
+      実際に動くページですので、パソコンでもスマートフォンでもご覧いただけます。
+    </p>
+    <p class="cover-lead" style="margin-top:1rem">
+      この資料でお決めいただくのは<strong>この方向で進めてよいか</strong>です。
+    </p>
+
+    <div class="cover-meta">
+      <span>2026年8月2日</span>
+      <span>ご提案：EasyWebCraft</span>
+    </div>
+  </header>
+
+  <!-- ============ 00 はじめに ============ -->
+  <section class="sec" id="s00">
+    <div class="sec-no">00</div>
+    <div class="sec-body">
+      <div class="sec-label">INTRO</div>
+      <h2>はじめに</h2>
+      <p class="lede">
+        前回の資料で<strong>サイトの構成</strong>をお決めいただきました。
+        家づくりでいう間取り図にあたる部分です。
+      </p>
+      <p>
+        今回はそこに<strong>色と書体を当てたもの</strong>をご覧いただきます。
+        内装の方向を先に決めておくと、このあとの全ページ制作が一度で進みます。
+      </p>
+      <p style="margin-top:1rem">
+        まだ写真は撮影前で、文章も下書きです。<strong>色の印象と全体の雰囲気</strong>だけ見ていただければ十分です。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 01 デザイン案 ============ -->
+  <section class="sec" id="s01">
+    <div class="sec-no">01</div>
+    <div class="sec-body">
+      <div class="sec-label">DESIGN</div>
+      <h2>デザイン案</h2>
+      <p class="lede">
+        画像は上のほうだけです。<strong>「実物を見る」から開くと、最後まで見られます。</strong>
+      </p>
+
+      <div class="mock">
+        <div class="mock-head">
+          <h3>保育園サイト</h3>
+          <span class="mock-tone">アプリコット</span>
+        </div>
+        <a class="shot" href="https://k-matsumoto527.github.io/kaminote-design/" target="_blank" rel="noopener">
+          <img src="img/preview-nursery.jpg" alt="保育園サイト トップページのデザイン案" width="1280" height="860" loading="lazy">
+        </a>
+        <p class="mock-note">
+          かみのて保育園・かみのて今渡保育園・病児保育を1つのサイトにまとめています。
+          あたたかさが伝わるよう暖色を主にし、病児保育など落ち着いて読んでほしいところだけ水色にしました。
+        </p>
+        <a class="open-btn" href="https://k-matsumoto527.github.io/kaminote-design/" target="_blank" rel="noopener">実物を見る</a>
+        <div class="open-url">https://k-matsumoto527.github.io/kaminote-design/</div>
+      </div>
+
+      <div class="mock">
+        <div class="mock-head">
+          <h3>放課後等デイサイト</h3>
+          <span class="mock-tone">パステルグリーン</span>
+        </div>
+        <a class="shot" href="https://k-matsumoto527.github.io/kaminote-day/" target="_blank" rel="noopener">
+          <img src="img/preview-day.jpg" alt="放課後等デイサイト トップページのデザイン案" width="1280" height="860" loading="lazy">
+        </a>
+        <p class="mock-note">
+          かみのてKIDSとかみのてSMILEを1つのサイトにまとめています。
+          ご要望のパステルグリーンを主にしました。
+          <strong>支援プログラム・自己評価・保護者評価の公表欄</strong>も入れてあります。
+        </p>
+        <a class="open-btn" href="https://k-matsumoto527.github.io/kaminote-day/" target="_blank" rel="noopener">実物を見る</a>
+        <div class="open-url">https://k-matsumoto527.github.io/kaminote-day/</div>
+      </div>
+
+      <div class="callout" style="margin-top:2rem">
+        <h4>2つのサイトの関係</h4>
+        <p>
+          色は分けましたが、書体・ボタンの形・見出しの作りはそろえています。
+          <strong>別のサイトだけれど、同じグループだと分かる</strong>状態です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 いま入っている情報 ============ -->
+  <section class="sec" id="s02">
+    <div class="sec-no">02</div>
+    <div class="sec-body">
+      <div class="sec-label">CONTENT</div>
+      <h2>いま入っている情報</h2>
+      <p class="lede">
+        ご覧いただくときに、ここだけ先にお伝えしておきます。
+      </p>
+      <table class="cmp">
+        <tr><th style="width:9rem">住所・電話・料金など</th>
+            <td><strong>今のホームページから引用しています。</strong>最新かどうか、ご確認をお願いします。</td></tr>
+        <tr><th>写真</th>
+            <td>すべて<strong>仮の写真</strong>です。左上に「イメージ写真」と出しています。取材時に撮影して差し替えます。</td></tr>
+        <tr><th>文章</th>
+            <td>こちらで書いた<strong>下書き</strong>です。取材でお話を伺ってから作り直します。</td></tr>
+      </table>
+      <p class="t-note">
+        ※ ページのいちばん上にある黒い帯は、この確認用に出しているものです。公開時には外します。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 03 ご確認いただきたいこと ============ -->
+  <section class="sec" id="s03">
+    <div class="sec-no">03</div>
+    <div class="sec-body">
+      <div class="sec-label">CHECK</div>
+      <h2>ご確認いただきたいこと</h2>
+      <p class="lede">
+        デザインのご意見とあわせて、<strong>この5点</strong>をお聞かせください。
+        ここが決まると、次の工程に進めます。
+      </p>
+
+      <div class="asks">
+        <div class="ask">
+          <h4>HANDS OF GOD の扱い</h4>
+          <p>
+            前回の構成のお話には出ていませんでしたが、認可外保育園として運営されていることを確認しました。
+            学童保育もされているようです。どちらのサイトに載せるか決める必要があります。
+            <span class="rec">おすすめ：保育園サイトの中に1ページ追加。保育の事業なので自然におさまり、2サイトのままで済みます。</span>
+          </p>
+        </div>
+
+        <div class="ask">
+          <h4>かみのてSMILE の自己評価・保護者評価</h4>
+          <p>
+            今のホームページには、かみのてKIDS の分だけ掲載されているようにお見受けしました。
+            SMILE の分もございましたら、お預かりして一緒に掲載します。
+          </p>
+        </div>
+
+        <div class="ask">
+          <h4>公表資料の受け渡し方法</h4>
+          <p>
+            自己評価と保護者評価は年1回（3月）の更新と伺っています。
+            御社でデータを作成いただき、こちらで差し替える形を想定しています。
+            <span class="rec">メールでPDFをお送りいただければ、こちらで差し替えて年度の表示も更新します。</span>
+          </p>
+        </div>
+
+        <div class="ask">
+          <h4>掲載する情報の最終確認</h4>
+          <p>
+            保育料・利用時間・定員などは変わることがあります。
+            公開前に、最新のものを一度ご確認ください。
+          </p>
+        </div>
+
+        <div class="ask">
+          <h4>取材と撮影の日程</h4>
+          <p>
+            写真がすべて仮のままなので、ここがいちばん時間がかかります。
+            園とお子さまのご都合のよい時期をお聞かせください。
+            <span class="rec">撮影したい場所は、こちらから一覧をお渡しします。当日に迷わないようにするためです。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 これからの進め方 ============ -->
+  <section class="sec" id="s04">
+    <div class="sec-no">04</div>
+    <div class="sec-body">
+      <div class="sec-label">NEXT STEP</div>
+      <h2>これからの進め方</h2>
+
+      <div class="steps">
+        <div class="step"><div><b>構成を決める</b><span>2サイト案に決定しました。</span></div></div>
+        <div class="step now"><div><b>デザインの方向を決める</b><span>この資料です。トップページ2枚をご確認ください。</span></div></div>
+        <div class="step"><div><b>取材・撮影</b><span>園にお伺いして、お話を伺い写真を撮ります。</span></div></div>
+        <div class="step"><div><b>全ページを作る</b><span>決まったデザインで、残りのページを作ります。</span></div></div>
+        <div class="step"><div><b>ご確認・修正</b><span>実際の画面を見ていただき、直したいところを直します。</span></div></div>
+        <div class="step"><div><b>公開</b><span>公開後の更新・修正も月額に含まれます。</span></div></div>
+      </div>
+
+      <p class="t-note" style="margin-top:1.6rem">
+        ※ 取材・撮影の日程が決まると、公開までの見通しがはっきりします。
+      </p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-logo">EasyWeb<span>Craft</span></div>
+    <div>ホームページ制作・運用・保守サービス</div>
+    <div class="foot-org">運営：株式会社TAC<br>愛知県名古屋市守山区瀬古東1-1701 201</div>
+    <div class="foot-note">本資料は株式会社 A and K さま向けにお作りしたものです。</div>
+  </footer>
+  </main>
+</div>
+
+<script>
+  document.getElementById('print-btn').addEventListener('click', function () {
+    window.print();
+  });
+
+  var links = document.querySelectorAll('#toc-nav a');
+
+  // --- 目次: いま読んでいる節を強調する ---
+  var secs = document.querySelectorAll('section.sec');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) { return; }
+        links.forEach(function (a) {
+          a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    secs.forEach(function (sec) { io.observe(sec); });
+  }
+
+</script>
+</body>
+</html>
