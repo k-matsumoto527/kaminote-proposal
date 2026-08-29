@@ -4,7 +4,7 @@
 ホームページ制作のご提案ページ。「かみのてグループ」という法人は存在しないので、宛名・法人名は
 必ず「株式会社 A and K」を使う。
 
-- <https://k-matsumoto527.github.io/kaminote-proposal/>
+- <https://easywebcraft.github.io/kaminote-proposal/>
 
 資料の目的は**サイト構成（家づくりでいう間取り図）を2案から選んでもらうこと**。
 デザインの合意でも受注のための提案でもないので、売り込みの要素は置かない。

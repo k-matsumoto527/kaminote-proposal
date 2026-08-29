@@ -15,7 +15,7 @@ import re
 
 SRC = pathlib.Path(__file__).resolve().parent / "src"
 DST = pathlib.Path(__file__).resolve().parent
-BASE_URL = "https://k-matsumoto527.github.io/kaminote-proposal"
+BASE_URL = "https://easywebcraft.github.io/kaminote-proposal"
 
 # Artifact のラッパーが入れてくれるものと同等の最小リセット。
 # ul の padding を落としているのは、.cs-list / ul.marks が list-style:none ＋
